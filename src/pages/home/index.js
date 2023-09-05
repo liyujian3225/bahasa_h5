@@ -1,29 +1,31 @@
-import React, { useState } from 'react'
-import { Space, Button, WaterMark } from 'antd-mobile'
+import React from 'react'
+import { Space, Avatar } from 'antd-mobile'
+import { useNavigate } from 'umi';
+import CustomButton from "@/components/CustomButton"
 import './index.less';
 
-const generatesRandomNumber = () => {
-  let res = ''
-  for(let i = 0; i < 12; i++){
-    res += Math.floor(Math.random()*10);
-  }
-  return res.slice(0, 3) + '.' + res.slice(3, 6) + '.' + res.slice(6, 9) + '.' + res.slice(9, 12);
-}
-
 export default () => {
+
+  let navigate = useNavigate();
+
   return (
     <div className="home">
-      <Space className="mySpace" direction='vertical' block={true}>
-        <Button className="myButton" block={true}>
+      <Space
+        className="mySpace"
+        direction='vertical'
+        block={true}
+        style={{ '--gap-vertical': '40px' }}
+      >
+        <Avatar src='./image/logo.png'  style={{ '--size': '128px', margin: '0 auto' }} />
+        <CustomButton onClick={() => navigate("/login", { replace: true })}>
           <p>Masuk</p>
           <p>用户登录</p>
-        </Button>
-        <Button className="myButton" block={true}>
+        </CustomButton>
+        <CustomButton onClick={() => navigate("/percobaan", { replace: true })}>
           <p>Percobaan</p>
           <p>购课前试看</p>
-        </Button>
+        </CustomButton>
       </Space>
-      <WaterMark content={generatesRandomNumber()} />
     </div>
   )
 }
