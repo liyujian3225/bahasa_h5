@@ -17,11 +17,11 @@ export default () => {
         style={{ '--gap-vertical': '40px' }}
       >
         <Avatar src='./image/logo.png'  style={{ '--size': '128px', margin: '0 auto' }} />
-        <CustomButton onClick={() => navigate("/login", { replace: true })}>
+        <CustomButton onClick={() => navigate("/login", { replace: false })}>
           <p>Masuk</p>
           <p>用户登录</p>
         </CustomButton>
-        <CustomButton onClick={() => navigate("/percobaan", { replace: true })}>
+        <CustomButton onClick={() => navigate("/percobaan", { replace: false })}>
           <p>Percobaan</p>
           <p>购课前试看</p>
         </CustomButton>

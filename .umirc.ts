@@ -23,5 +23,7 @@ export default defineConfig({
     { path: "/course", component: "course" },
     { path: "/contactUs", component: "contactUs" },
     { path: "/login", component: "login" },
+    { path: "/person", component: "person" },
+    { path: "/confidentiality", component: "confidentiality" },
   ],
 });

@@ -23,11 +23,11 @@ export default () => {
           <p>Internasional</p>
           <p>国际地区试看</p>
         </CustomButton>
-        <CustomButton onClick={() => navigate("/course", { replace: true })}>
+        <CustomButton onClick={() => navigate("/course", { replace: false })}>
           <p>Tentang Les</p>
           <p>课程介绍</p>
         </CustomButton>
-        <CustomButton onClick={() => navigate("/contactUs", { replace: true })}>
+        <CustomButton onClick={() => navigate("/contactUs", { replace: false })}>
           <p>Hubungi</p>
           <p>联系我们</p>
         </CustomButton>
