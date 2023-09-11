@@ -2,7 +2,7 @@ import { defineConfig } from "umi";
 
 export default defineConfig({
   npmClient: 'pnpm',
-  outputPath: 'dist',
+  outputPath: 'mobile',
   alias: {},
   hash: true,  //让 build 之后的产物包含 hash 后缀, 避免浏览器加载缓存
   proxy: {
