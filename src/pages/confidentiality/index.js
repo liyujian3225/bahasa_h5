@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'umi';
 import { Space, Avatar, Button } from 'antd-mobile'
+import './index.less'
 
 const titleStyle = {
   fontSize: '24px',
@@ -14,7 +15,7 @@ const CustomTitle = ({ title }) => {
 
 const Content = () => {
   return (
-    <p style={{ fontSize: '16px', padding: '20px' }}>
+    <p className="textArea">
       <span>敬请留意，</span>
       <span style={{ color: '#ff0000' }}>本课程仅供个人单独使用。</span>
       <span>如您欲购买用于多人观看学习的课程，请与我们联系以获取企业授权。我们对盗版课程的传播持绝对零容忍态度，任何个人或组织均不得将本课程传播至互联网或其他学习机构。</span>
@@ -26,21 +27,22 @@ const Content = () => {
 
 export default function () {
   return (
-    <>
-      <Space block={true} align="center" justify="center">
-        <Avatar src='./image/logo.png'  style={{ '--size': '80px', margin: '0 auto' }} />
+    <div className="confidentiality">
+      <Space className="mySpace" block={true} align="center" justify="center">
+        <Avatar src='./image/lock.png' fit='contain'  style={{ '--size': '80px' }} />
         <Space direction='vertical' style={{ '--gap-vertical': 0 }}>
           <CustomTitle title='课程保密协议' />
           <CustomTitle title='Perjanjian kerahasiaan' />
         </Space>
       </Space>
       <Content />
-      <Space direction='vertical' block={true}>
+      <Space className="mySpace" direction='vertical' block={true}>
         <Button
           style={{
             '--background-color': '#4e8f82',
             '--border-radius': '10px',
-            '--text-color': '#fff'
+            '--text-color': '#fff',
+            'fontWeight': 'bold'
           }}
           size='large'
           fill='solid'>
@@ -50,7 +52,8 @@ export default function () {
           style={{
             '--background-color': '#ff0000',
             '--border-radius': '10px',
-            '--text-color': '#fff'
+            '--text-color': '#fff',
+            'fontWeight': 'bold'
           }}
           size='large'
           fill='solid'>
@@ -61,6 +64,7 @@ export default function () {
         <CustomTitle title='承诺人：刘小鹏' />
         <CustomTitle title='日期：2023年8月' />
       </Space>
-    </>
+      <Avatar className="myAvatar" src='./image/person.png' fit='scale-down'  style={{ '--size': '80%' }} />
+    </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'umi';
-import { Space, Avatar, Collapse } from 'antd-mobile'
+import { Space, Avatar, Collapse, Button } from 'antd-mobile'
 
 const titleStyle = {
   fontSize: '34px',
@@ -13,6 +13,9 @@ const CustomTitle = ({ title }) => {
 }
 
 export default function () {
+
+  let navigate = useNavigate();
+
   return (
     <>
       <Space block={true} align="center" justify="center">
@@ -32,6 +35,10 @@ export default function () {
           dd
         </Collapse.Panel>
       </Collapse>
+
+      <Button block color='primary' onClick={() => navigate("/confidentiality", { replace: false })} size='large'>
+        跳转到隐私
+      </Button>
     </>
   )
 }

@@ -17,7 +17,7 @@ export default function Layout() {
 
   return (
     <div className="layouts">
-      <NavBar onBack={() => navigate(-1)}>标题</NavBar>
+      <NavBar style={{ padding: 0 }} onBack={() => navigate(-1)}>标题</NavBar>
       <Outlet />
       <WaterMark content={generatesRandomNumber()} />
     </div>

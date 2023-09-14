@@ -1,15 +1,27 @@
-import React from 'react'
-import { Space, Avatar } from 'antd-mobile'
+import React, { useState } from 'react'
+import { Space, Avatar, Mask, SpinLoading } from 'antd-mobile'
 import { useNavigate } from 'umi';
 import CustomButton from "@/components/CustomButton"
 import './index.less';
 
 export default () => {
 
+  const [visible, setVisible] = useState(true)
   let navigate = useNavigate();
+  setTimeout(() => {
+    setVisible(false);
+  }, 500)
 
   return (
     <div className="home">
+      <Mask opacity='thick' visible={visible}>
+        <div className='overlayContent'>
+          <Space direction='vertical'>
+            <SpinLoading color='primary' />
+            <span>加载中...</span>
+          </Space>
+        </div>
+      </Mask>
       <Space
         className="mySpace"
         direction='vertical'

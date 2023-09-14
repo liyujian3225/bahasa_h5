@@ -18,11 +18,18 @@ export default function () {
   return (
     <>
       <Form
+        style={{
+          height: '430px',
+          position: 'absolute',
+          top: 0, bottom: 0,
+          left: 0, right: 0,
+          margin: 'auto'
+        }}
         layout='horizontal'
         mode='card'
         footer={
           <Button block color='primary' onClick={onSubmit} size='large'>
-            登陆系统Masuk
+            登陆系统 Masuk
           </Button>
         }
       >
