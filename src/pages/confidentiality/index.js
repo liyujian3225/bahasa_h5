@@ -4,7 +4,7 @@ import { Space, Avatar, Button } from 'antd-mobile'
 import './index.less'
 
 const titleStyle = {
-  fontSize: '24px',
+  fontSize: '20px',
   fontWeight: 'bold',
   color: '#000',
 }
@@ -26,6 +26,9 @@ const Content = () => {
 };
 
 export default function () {
+
+  let navigate = useNavigate();
+
   return (
     <div className="confidentiality">
       <Space className="mySpace" block={true} align="center" justify="center">
@@ -38,6 +41,7 @@ export default function () {
       <Content />
       <Space className="mySpace" direction='vertical' block={true}>
         <Button
+          onClick={() => navigate("/personDetail", { replace: false })}
           style={{
             '--background-color': '#4e8f82',
             '--border-radius': '10px',
@@ -49,6 +53,7 @@ export default function () {
           我同意本协议
         </Button>
         <Button
+          onClick={() => window.location.href = "https://www.gov.cn/guoqing/2021-10/29/content_5647633.htm"}
           style={{
             '--background-color': '#ff0000',
             '--border-radius': '10px',
@@ -64,7 +69,7 @@ export default function () {
         <CustomTitle title='承诺人：刘小鹏' />
         <CustomTitle title='日期：2023年8月' />
       </Space>
-      <Avatar className="myAvatar" src='./image/person.png' fit='scale-down'  style={{ '--size': '80%' }} />
+      <img className="myAvatar" src="./image/person.jpg" alt=""/>
     </div>
   )
 }

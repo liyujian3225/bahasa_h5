@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavBar, WaterMark } from 'antd-mobile'
-import { useNavigate, Outlet } from 'umi';
+import { useNavigate, Outlet, useRouteProps } from 'umi';
 import './index.less';
 
 const generatesRandomNumber = () => {
@@ -13,11 +13,14 @@ const generatesRandomNumber = () => {
 
 export default function Layout() {
 
-  let navigate = useNavigate();
+  const routeProps = useRouteProps()
+  const navigate = useNavigate();
+  const { name } = routeProps;
+
 
   return (
     <div className="layouts">
-      <NavBar style={{ padding: 0 }} onBack={() => navigate(-1)}>标题</NavBar>
+      <NavBar style={{ padding: 0 }} onBack={() => navigate(-1)}>{ name }</NavBar>
       <Outlet />
       <WaterMark content={generatesRandomNumber()} />
     </div>

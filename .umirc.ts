@@ -15,15 +15,22 @@ export default defineConfig({
   theme: {
     '@primary-color': '#1DA57A'
   },
-  title: "智慧管理系统",
+  title: "东东印尼语",
   routes: [
     { path: "/", component: "home" },
-    { path: "/home", component: "home" },
-    { path: "/percobaan", component: "percobaan" },
-    { path: "/course", component: "course" },
-    { path: "/contactUs", component: "contactUs" },
-    { path: "/login", component: "login" },
-    { path: "/person", component: "person" },
-    { path: "/confidentiality", component: "confidentiality" },
+    { path: "/home", component: "home", name: "Selamat datang 欢迎" },
+    { path: "/percobaan", component: "percobaan", name: "Hubungi Kami 联系我们" },
+    { path: "/course", component: "course", name: "课程介绍" },
+    { path: "/contactUs", component: "contactUs", name: "Hubungi Kami 联系我们" },
+    { path: "/login", component: "login", name: "Selamat datang 欢迎" },
+    { path: "/person", component: "person", name: "课程目录" },
+    { path: "/personDetail", component: "personDetail", name: "课程查看" },
+    { path: "/confidentiality", component: "confidentiality", name: "保密协议" },
   ],
+
+  links: [
+    { href: 'https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.5/skins/default/aliplayer-min.css', rel: 'preload' }
+  ],
+  headScripts: [`https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.5/aliplayer-min.js`],
+
 });
