@@ -1,6 +1,6 @@
 import React from 'react'
-import { useNavigate } from 'umi';
-import { Space, Avatar, Collapse, Button } from 'antd-mobile'
+import {useClientLoaderData, useNavigate} from 'umi';
+import {Avatar, Button, Collapse, Space} from 'antd-mobile'
 
 const titleStyle = {
   fontSize: '34px',
@@ -12,9 +12,15 @@ const CustomTitle = ({ title }) => {
   return <span style={titleStyle}>{ title }</span>
 }
 
+export async function clientLoader() {
+  const data = await fetch('/api/data');
+  return data;
+}
+
 export default function () {
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const { data } = useClientLoaderData(); //data预加载
 
   return (
     <>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'umi';
-import { Space, Avatar, Collapse, Button } from 'antd-mobile'
+import { Space, Avatar, Modal, Button } from 'antd-mobile'
 import "./index.less"
 
 const titleStyle = {
@@ -18,14 +18,36 @@ export default function () {
       height: "200px",
       cover: 'https://img.alicdn.com/tps/TB1EXIhOFXXXXcIaXXXXXXXXXXX-760-340.jpg',
       "autoplay": false,
-      "isLive": false,
+      "isLive": false, //是否为直播播放
       "rePlay": false,
       "playsinline": true,
       "preload": true,
       "language": "zh-cn",
       "controlBarVisibility": "click",
       "showBarTime": 5000,
-      "useH5Prism": true
+      "useH5Prism": true,
+      skinLayout:[
+        {name: "bigPlayButton", align: "blabs", x: 30, y: 80},
+        {
+          name: "H5Loading", align: "cc"
+        },
+        {name: "errorDisplay", align: "tlabs", x: 0, y: 0},
+        {name: "infoDisplay"},
+        {name:"tooltip", align:"blabs",x: 0, y: 56},
+        {name: "thumbnail"},
+        {
+          name: "controlBar", align: "blabs", x: 0, y: 0,
+          children: [
+            {name: "progress", align: "blabs", x: 0, y: 44},
+            {name: "playButton", align: "tl", x: 15, y: 12},
+            {name: "timeDisplay", align: "tl", x: 10, y: 7},
+            {name: "fullScreenButton", align: "tr", x: 10, y: 12},
+            {name:"subtitle", align:"tr",x:15, y:12},
+            {name:"setting", align:"tr",x:15, y:12},
+            {name: "volume", align: "tr", x: 5, y: 10}
+          ]
+        }
+      ]
     }, function (player) {
       console.log("The player is created");
     });
@@ -44,11 +66,31 @@ export default function () {
         <div id="player-con"/>
       </div>
       <Space block justify="between" style={{ width: '100%' }}>
-        <Space direction='vertical' style={{ '--gap-vertical': '20px' }}>
-          <Button color='primary' size='large'>下一课 Next</Button>
-          <Button color='primary' size='large'>上一课 Last</Button>
+        <Space block direction='vertical' style={{ '--gap-vertical': '20px' }}>
+          <Button
+            block
+            color='primary'
+            size='large'>
+            下一课 Next
+          </Button>
+          <Button
+            block
+            color='primary'
+            size='large'>
+            上一课 Last
+          </Button>
         </Space>
-        <div className="operate">
+        <div
+          className="operate"
+          onClick={() =>
+            Modal.alert({
+              content: '功能开发中，敬请期待！',
+              onConfirm: () => {
+                console.log('Confirmed')
+              },
+            })
+          }
+        >
           <span>练习</span>
         </div>
       </Space>

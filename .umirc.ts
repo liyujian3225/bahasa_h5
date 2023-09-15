@@ -1,10 +1,15 @@
 import { defineConfig } from "umi";
 
+//配置文件，包含 Umi 所有非运行时配置
 export default defineConfig({
+  title: "东东印尼语",
   npmClient: 'pnpm',
   outputPath: 'mobile',
-  alias: {},
+  history: { type: 'hash' },
+  mock: false, //关闭 Mock 功能
   hash: true,  //让 build 之后的产物包含 hash 后缀, 避免浏览器加载缓存
+  clientLoader: {}, //路由数据预加载
+
   proxy: {
     '/api': {
       'target': 'http://jsonplaceholder.typicode.com/',
@@ -12,10 +17,11 @@ export default defineConfig({
       'pathRewrite': { '^/api' : '' },
     }
   },
+
   theme: {
     '@primary-color': '#1DA57A'
   },
-  title: "东东印尼语",
+
   routes: [
     { path: "/", component: "home" },
     { path: "/home", component: "home", name: "Selamat datang 欢迎" },
@@ -27,10 +33,14 @@ export default defineConfig({
     { path: "/personDetail", component: "personDetail", name: "课程查看" },
     { path: "/confidentiality", component: "confidentiality", name: "保密协议" },
   ],
-
+  alias: {},
   links: [
-    { href: 'https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.5/skins/default/aliplayer-min.css', rel: 'preload' }
+    {
+      rel: "stylesheet",
+      type: "text/css",
+      href: 'https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.3/skins/default/aliplayer-min.css'
+    },
   ],
-  headScripts: [`https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.5/aliplayer-min.js`],
+  headScripts: ['https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.3/aliplayer-h5-min.js'],
 
 });
