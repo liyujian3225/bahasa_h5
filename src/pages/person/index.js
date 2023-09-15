@@ -12,10 +12,10 @@ const CustomTitle = ({ title }) => {
   return <span style={titleStyle}>{ title }</span>
 }
 
-export async function clientLoader() {
-  const data = await fetch('/api/data');
-  return data;
-}
+// export async function clientLoader() {
+//   const data = await fetch('/api/data');
+//   return data;
+// }
 
 export default function () {
 
