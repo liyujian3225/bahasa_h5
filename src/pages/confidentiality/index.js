@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'umi';
+import { useNavigate, useLocation } from 'umi';
 import { Space, Avatar, Button } from 'antd-mobile'
 import './index.less'
 
@@ -26,8 +26,16 @@ const Content = () => {
 };
 
 export default function () {
+  const stateParams = useLocation();
+  const { title, vod } = stateParams.state;
 
   let navigate = useNavigate();
+  const agreeRule = () => {
+    navigate("/courseDetail", {
+      replace: false,
+      state: { title, vod }
+    })
+  }
 
   return (
     <div className="confidentiality">
@@ -41,7 +49,7 @@ export default function () {
       <Content />
       <Space className="mySpace" direction='vertical' block={true}>
         <Button
-          onClick={() => navigate("/personDetail", { replace: false })}
+          onClick={() => agreeRule()}
           style={{
             '--background-color': '#4e8f82',
             '--border-radius': '10px',

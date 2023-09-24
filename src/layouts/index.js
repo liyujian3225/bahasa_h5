@@ -1,28 +1,23 @@
 import React, { useState } from 'react'
 import { NavBar, WaterMark } from 'antd-mobile'
-import { useNavigate, Outlet, useRouteProps } from 'umi';
-import './index.less';
+import { useNavigate, useRouteProps, Outlet, connect } from 'umi';
 
-const generatesRandomNumber = () => {
-  let res = ''
-  for(let i = 0; i < 12; i++){
-    res += Math.floor(Math.random()*10);
-  }
-  return res.slice(0, 3) + '.' + res.slice(3, 6) + '.' + res.slice(6, 9) + '.' + res.slice(9, 12);
-}
-
-export default function Layout() {
-
-  const routeProps = useRouteProps()
+const Layout = (props) => {
   const navigate = useNavigate();
+  const routeProps = useRouteProps()
   const { name } = routeProps;
 
-
   return (
-    <div className="layouts">
-      <NavBar style={{ padding: 0 }} onBack={() => navigate(-1)}>{ name }</NavBar>
+    <div style={{ width: '100%', height: '100%', padding: '12px', boxSizing: 'border-box' }}>
+      { name && <NavBar style={{ padding: 0 }} onBack={() => navigate(-1)}>{ name }</NavBar> }
       <Outlet />
-      <WaterMark content={generatesRandomNumber()} />
+      <WaterMark content={props.waterMarkContent} />
     </div>
   );
 }
+
+export default connect((state) => {
+  return {
+    waterMarkContent: state.user.waterMarkContent
+  }
+})(Layout)

@@ -16,6 +16,8 @@
   "devDependencies": {
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "typescript": "^5.2.2"
+    "@umijs/plugins": "^4.0.81",
+    "typescript": "^5.2.2",
+    "umi-request": "^1.4.0"
   }
 }

@@ -5,13 +5,11 @@ import CustomButton from "@/components/CustomButton"
 import './index.less';
 
 export default () => {
-
-  const [visible, setVisible] = useState(true)
   let navigate = useNavigate();
+  const [visible, setVisible] = useState(true)
   setTimeout(() => {
     setVisible(false);
   }, 500)
-
   return (
     <div className="home">
       <Mask opacity='thick' visible={visible}>
@@ -33,7 +31,7 @@ export default () => {
           <p>Masuk</p>
           <p>用户登录</p>
         </CustomButton>
-        <CustomButton onClick={() => navigate("/percobaan", { replace: false })}>
+        <CustomButton onClick={() => navigate("/courseTry", { replace: false })}>
           <p>Percobaan</p>
           <p>购课前试看</p>
         </CustomButton>

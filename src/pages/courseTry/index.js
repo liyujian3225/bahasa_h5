@@ -23,7 +23,7 @@ export default () => {
           <p>Internasional</p>
           <p>国际地区试看</p>
         </CustomButton>
-        <CustomButton onClick={() => navigate("/course", { replace: false })}>
+        <CustomButton onClick={() => navigate("/courseIntroduce", { replace: false })}>
           <p>Tentang Les</p>
           <p>课程介绍</p>
         </CustomButton>

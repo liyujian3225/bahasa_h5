@@ -6,32 +6,35 @@ export default defineConfig({
   npmClient: 'pnpm',
   outputPath: 'mobile',
   history: { type: 'hash' },
-  mock: false, //关闭 Mock 功能
   hash: true,  //让 build 之后的产物包含 hash 后缀, 避免浏览器加载缓存
+  mock: false, //关闭 Mock 功能
   clientLoader: {}, //路由数据预加载
-
-  proxy: {
-    '/api': {
-      'target': 'http://jsonplaceholder.typicode.com/',
-      'changeOrigin': true,
-      'pathRewrite': { '^/api' : '' },
-    }
-  },
-
   theme: {
     '@primary-color': '#1DA57A'
   },
-
+  proxy: {
+    '/business': {
+      'target': 'http://34.92.39.207:9000/business/',
+      'changeOrigin': true,
+      'pathRewrite': { '^/business' : '' },
+    },
+    '/file': {
+      'target': 'http://34.92.39.207:9000/file/',
+      'changeOrigin': true,
+      'pathRewrite': { '^/file' : '' },
+    }
+  },
   routes: [
     { path: "/", component: "home" },
     { path: "/home", component: "home", name: "Selamat datang 欢迎" },
-    { path: "/percobaan", component: "percobaan", name: "Hubungi Kami 联系我们" },
-    { path: "/course", component: "course", name: "课程介绍" },
-    { path: "/contactUs", component: "contactUs", name: "Hubungi Kami 联系我们" },
     { path: "/login", component: "login", name: "Selamat datang 欢迎" },
-    { path: "/person", component: "person", name: "课程目录" },
-    { path: "/personDetail", component: "personDetail", name: "课程查看" },
+    { path: "/courseCatalog", component: "courseCatalog", name: "课程目录" },
     { path: "/confidentiality", component: "confidentiality", name: "保密协议" },
+    { path: "/courseDetail", component: "courseDetail", name: "课程查看" },
+
+    { path: "/courseTry", component: "courseTry", name: "Hubungi Kami 联系我们" },
+    { path: "/courseIntroduce", component: "courseIntroduce", name: "课程介绍" },
+    { path: "/contactUs", component: "contactUs", name: "Hubungi Kami 联系我们" },
   ],
   alias: {},
   links: [
@@ -43,4 +46,6 @@ export default defineConfig({
   ],
   headScripts: ['https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.3/aliplayer-h5-min.js'],
 
+  plugins: ['@umijs/plugins/dist/dva'],
+  dva: {}
 });
