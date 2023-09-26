@@ -1,6 +1,7 @@
 import React from 'react'
-import { useNavigate, useLocation } from 'umi';
+import { useNavigate, useLocation, connect } from 'umi';
 import { Space, Avatar, Button } from 'antd-mobile'
+import dayjs from 'dayjs'
 import './index.less'
 
 const titleStyle = {
@@ -25,7 +26,7 @@ const Content = () => {
   )
 };
 
-export default function () {
+const Layout = (props) => {
   const stateParams = useLocation();
   const { title, vod } = stateParams.state;
 
@@ -36,6 +37,8 @@ export default function () {
       state: { title, vod }
     })
   }
+
+  const currentDate = dayjs().format("YYYY年M月")
 
   return (
     <div className="confidentiality">
@@ -74,10 +77,16 @@ export default function () {
         </Button>
       </Space>
       <Space direction='vertical' style={{ '--gap-vertical': '5px' }}>
-        <CustomTitle title='承诺人：刘小鹏' />
-        <CustomTitle title='日期：2023年8月' />
+        <CustomTitle title={ '承诺人：' + props.waterMarkContent } />
+        <CustomTitle title={ '日期：' + currentDate } />
       </Space>
       <img className="myAvatar" src="./image/person.jpg" alt=""/>
     </div>
   )
 }
+
+export default connect((state) => {
+  return {
+    waterMarkContent: state.user.waterMarkContent
+  }
+})(Layout)
