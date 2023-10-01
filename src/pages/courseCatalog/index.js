@@ -30,7 +30,8 @@ const courseCatalog = (props) => {
           let { chapters, sections } = content;
           chapters = chapters.map(item => {
             const { id } = item;
-            item.sectionList = sections.filter(j => j.chapterId === id )
+            item.sectionList = sections.filter(j => j.chapterId === id );
+            item.sectionList = item.sectionList.sort((a, b) => a.sort - b.sort)
             return item;
           })
           setChaptersData(chapters)

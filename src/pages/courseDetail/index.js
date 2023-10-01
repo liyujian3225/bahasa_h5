@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useLocation, connect } from 'umi';
+import { useLocation, connect } from 'umi';
 import { Space, Avatar, Dialog, Button } from 'antd-mobile'
 import request from 'umi-request';
 import "./index.less"
@@ -13,23 +13,24 @@ const titleStyle = {
 const courseDetail = (props) => {
   const stateParams = useLocation();
   const { title, vod } = stateParams.state;
+  const [currentTitle, setCurrentTitle] = useState(title);
   const [currentVod, setCurrentVod] = useState(vod);
+  const [player, setPlayer] = useState(null);
 
-  const navigate = useNavigate();
   const courseList = props.courseList;
   const switchCourse = async (type) => {
-    const index = courseList.findIndex(item => item.vod === vod);
+    const index = courseList.findIndex(item => item.vod === currentVod);
     let newVod = "";
-    let title = "";
+    let newTitle = "";
     if(type === 'next') {
-      if(index === courseList.length) {
+      if(index === courseList.length - 1) {
         const result = await Dialog.confirm({
           content: '当前课程已是最后一个！',
         })
         return;
       }
       newVod = courseList[index + 1].vod;
-      title = courseList[index + 1].title;
+      newTitle = courseList[index + 1].title;
     }else {
       if(index === 0) {
         const result = await Dialog.confirm({
@@ -38,40 +39,44 @@ const courseDetail = (props) => {
         return;
       }
       newVod = courseList[index - 1].vod;
-      title = courseList[index - 1].title;
+      newTitle = courseList[index - 1].title;
     }
-    navigate("/courseDetail", {
-      replace: false,
-      state: { title, newVod }
-    })
+    setCurrentTitle(newTitle);
+    setCurrentVod(newVod);
   }
 
-  let myPlayer = null;
   useEffect(() => {
-    request.get('/file/web/get-auth/' + currentVod).then(res => {
-      const { success, content } = res;
-      if(success) {
-        new Aliplayer({
-          id: "player-con",
-          vid: currentVod,
-          playauth: content,
-          height: "200px",
-          cover: './image/cover.png',
-          "autoplay": false,
-          "isLive": false, //是否为直播播放
-          "rePlay": false,
-          "playsinline": true,
-          "preload": true,
-          "language": "zh-cn",
-          "controlBarVisibility": "click",
-          "showBarTime": 5000,
-          "useH5Prism": true,
-        }, function (player) {
-          myPlayer = player
-        });
-      }
-    })
-  }, [currentVod])
+    if(player) {
+      request.get('/file/web/get-auth/' + currentVod).then(res => {
+        const { success, content } = res;
+        player.replayByVidAndPlayAuth(currentVod,content);
+      })
+    }else {
+      request.get('/file/web/get-auth/' + currentVod).then(res => {
+        const { success, content } = res;
+        if(success) {
+          new Aliplayer({
+            id: "player-con",
+            vid: currentVod,
+            playauth: content,
+            height: "200px",
+            cover: './image/cover.png',
+            "autoplay": false,
+            "isLive": false, //是否为直播播放
+            "rePlay": false,
+            "playsinline": true,
+            "preload": true,
+            "language": "zh-cn",
+            "controlBarVisibility": "click",
+            "showBarTime": 5000,
+            "useH5Prism": true,
+          }, function (player) {
+            setPlayer(player)
+          });
+        }
+      })
+    }
+  }, [ currentVod ])
 
   return (
     <>
@@ -80,7 +85,7 @@ const courseDetail = (props) => {
         <span style={titleStyle}>你好，{props.waterMarkContent}</span>
       </Space>
       <p className="textArea">
-        您正在观看的课程是{title}。如有疑问请联系老师。
+        您正在观看的课程是{currentTitle}。如有疑问请联系老师。
       </p>
       <div className="videoContain">
         <div id="player-con"/>
