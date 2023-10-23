@@ -10,8 +10,42 @@ const titleStyle = {
 }
 
 const Login = (props) => {
-  //密码错误提示模态框
+  //登陆成功提示模态框
   let navigate = useNavigate();
+  const handleInputSuccess = (content) => {
+    Modal.show({
+      content: (
+        <>
+          <AutoCenter style={{ fontSize: '14px', color: '#000' }}>本系统仅供已经购买了课程的同学使用，如果您未买课程，请您立即关闭。</AutoCenter>
+        </>
+      ),
+      closeOnAction: true,
+      actions: [
+        {
+          key: 'download',
+          text: '我已购买',
+          primary: true,
+          onClick: () => {
+            navigate("/courseCatalog", { replace: false });
+            const { name, id, mobile, token } = content;
+            props.dispatch({
+              type: "user/changeWaterMarkContent",
+              payload: name
+            })
+          }
+        },
+        {
+          key: 'online',
+          text: '立即关闭',
+          primary: true,
+          onClick: () => {
+            window.location.href = "https://www.gov.cn/guoqing/2021-10/29/content_5647633.htm"
+          }
+        },
+      ],
+    })
+  }
+
   const handleInputError = () => {
     Modal.show({
       content: (
@@ -46,12 +80,7 @@ const Login = (props) => {
     }).then(res => {
         const { success, content } = res;
         if(success) {
-          navigate("/courseCatalog", { replace: false });
-          const { id, mobile, name, photo, token } = content;
-          props.dispatch({
-            type: "user/changeWaterMarkContent",
-            payload: name
-          })
+          handleInputSuccess(content)
         }else {
           handleInputError()
         }

@@ -14,12 +14,12 @@ export default defineConfig({
   },
   proxy: {
     '/business': {
-      'target': 'http://34.92.39.207:9000/business/',
+      'target': 'http://104.155.209.57:9000/business/',
       'changeOrigin': true,
       'pathRewrite': { '^/business' : '' },
     },
     '/file': {
-      'target': 'http://34.92.39.207:9000/file/',
+      'target': 'http://104.155.209.57:9000/file/',
       'changeOrigin': true,
       'pathRewrite': { '^/file' : '' },
     }

@@ -60,7 +60,7 @@ const courseDetail = (props) => {
             vid: currentVod,
             playauth: content,
             height: "200px",
-            cover: './image/cover.png',
+            cover: './image/cover.jpg',
             "autoplay": false,
             "isLive": false, //是否为直播播放
             "rePlay": false,
@@ -107,23 +107,23 @@ const courseDetail = (props) => {
             上一课 Last
           </Button>
         </Space>
-        <div
-          className="operate"
-          onClick={
-            async () => {
-              const result = await Dialog.confirm({
-                content: '仅支持国外的同学使用，确定跳转？',
-              })
-              if (result) {
-                window.location.href = "https://drive.google.com/drive/folders/1dGSwPbViA9SvL0giuJ8OCnUny7YkZoDA?usp=sharing"
-              } else {
+        {/*<div*/}
+        {/*  className="operate"*/}
+        {/*  onClick={*/}
+        {/*    async () => {*/}
+        {/*      const result = await Dialog.confirm({*/}
+        {/*        content: '仅支持国外的同学使用，确定跳转？',*/}
+        {/*      })*/}
+        {/*      if (result) {*/}
+        {/*        window.location.href = "https://drive.google.com/drive/folders/1dGSwPbViA9SvL0giuJ8OCnUny7YkZoDA?usp=sharing"*/}
+        {/*      } else {*/}
 
-              }
-            }
-          }
-        >
-          <span>练习</span>
-        </div>
+        {/*      }*/}
+        {/*    }*/}
+        {/*  }*/}
+        {/*>*/}
+        {/*  <span>练习</span>*/}
+        {/*</div>*/}
       </Space>
     </>
   )
