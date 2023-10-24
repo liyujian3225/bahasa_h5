@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, connect } from 'umi';
 import { Space, Avatar, Dialog, Button } from 'antd-mobile'
-import request from 'umi-request';
+import { request } from '@/services';
 import "./index.less"
 
 const titleStyle = {

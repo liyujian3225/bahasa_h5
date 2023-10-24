@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import {useNavigate, connect } from 'umi';
-import {Avatar, Button, Collapse, Space} from 'antd-mobile'
-import request from 'umi-request';
+import {Avatar, Collapse, Space} from 'antd-mobile'
+import { request } from '@/services';
 
 const titleStyle = {
   fontSize: '28px',
@@ -35,10 +35,12 @@ const courseCatalog = (props) => {
             return item;
           })
           setChaptersData(chapters)
+
           props.dispatch({
             type: "user/changeCourseList",
             payload: sections
           })
+
         }
       })
   }

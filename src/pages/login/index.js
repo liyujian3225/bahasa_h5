@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate, connect } from 'umi';
 import { Modal, Form, Input, Button, AutoCenter } from 'antd-mobile'
-import request from 'umi-request';
+import { request } from '@/services';
 
 const titleStyle = {
   fontSize: '28px',
@@ -12,7 +12,7 @@ const titleStyle = {
 const Login = (props) => {
   //登陆成功提示模态框
   let navigate = useNavigate();
-  const handleInputSuccess = (content) => {
+  const handleInputSuccess = () => {
     Modal.show({
       content: (
         <>
@@ -25,13 +25,8 @@ const Login = (props) => {
           key: 'download',
           text: '我已购买',
           primary: true,
-          onClick: () => {
+          onClick: async () => {
             navigate("/courseCatalog", { replace: false });
-            const { name, id, mobile, token } = content;
-            props.dispatch({
-              type: "user/changeWaterMarkContent",
-              payload: name
-            })
           }
         },
         {
@@ -80,7 +75,16 @@ const Login = (props) => {
     }).then(res => {
         const { success, content } = res;
         if(success) {
-          handleInputSuccess(content)
+          const { name, token } = content;
+          props.dispatch({
+            type: "user/changeToken",
+            payload: token
+          })
+          props.dispatch({
+            type: "user/changeWaterMarkContent",
+            payload: name
+          })
+          handleInputSuccess();
         }else {
           handleInputError()
         }

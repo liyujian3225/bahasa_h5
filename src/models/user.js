@@ -8,17 +8,27 @@ const generatesRandomNumber = () => {
 
 export default {
   state: {
-    waterMarkContent: generatesRandomNumber(),
-    courseList: [],
+    token: localStorage.getItem("token") || "",
+    waterMarkContent: localStorage.getItem("waterMarkContent") || generatesRandomNumber(),
+    courseList: localStorage.getItem("courseList") ? JSON.parse(localStorage.getItem("courseList")) : []
   },
   reducers: {
+    changeToken(state, { payload }) {
+      localStorage.setItem("token", payload);
+      return {
+        ...state,
+        token: payload,
+      };
+    },
     changeWaterMarkContent(state, { payload }) {
+      localStorage.setItem("waterMarkContent", payload);
       return {
         ...state,
         waterMarkContent: payload,
       };
     },
     changeCourseList(state, { payload }) {
+      localStorage.setItem("courseList", JSON.stringify(payload));
       return {
         ...state,
         courseList: payload,
