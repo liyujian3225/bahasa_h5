@@ -6,7 +6,8 @@ export const request = extend({
   timeout: 10000,
   errorHandler: function (error) {
     Modal.alert({
-      content: '登录失效，请重新登录',
+      confirmText: '好的，我不会与他人分享我的帐号。我只是在自己的新设备登陆。',
+      content: '学习系统仅供1人使用，你的学习帐号已在其他设备登陆。请不要将学习帐号泄露给他人。与他人分享账号或频繁使用新设备登陆可能会导致账号被临时/永久封禁。',
       onConfirm: () => {
         window.location.href = "/login";
       },
