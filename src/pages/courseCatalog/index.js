@@ -60,6 +60,13 @@ const courseCatalog = (props) => {
         <Avatar src='./image/logo.png'  style={{ '--size': '56px', margin: '0 auto' }} />
         <span style={titleStyle}>你好，{props.waterMarkContent}</span>
       </Space>
+      <p style={{ marginBottom: '20px'}}>
+        <span>学习过程中</span>
+        <span style={{color: '#ff0000'}}>请勿开启录屏软件</span>或
+        <span style={{color: '#ff0000'}}>第三方下载软件</span>，否则您的帐号可能会受到限制。如果您的网络不佳，视频加载可能需要10-20秒，期间若出现
+        <span style={{color: '#ff0000'}}>转圈、黑屏、有声音没画面</span>
+        等情况，请耐心等待。如果长时间无法加载，请<span style={{color: '#ff0000'}}>切换网络重新登陆</span>。
+      </p>
       <Collapse accordion>
         { chaptersData.map(item => (
           <Collapse.Panel
