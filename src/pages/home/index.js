@@ -31,10 +31,14 @@ export default () => {
           <p>Masuk</p>
           <p>用户登录</p>
         </CustomButton>
-        <CustomButton onClick={() => navigate("/courseTry", { replace: false })}>
+        <CustomButton onClick={() => window.open("https://www.bilibili.com/video/BV1ta4y137ji/?spm_id_from=333.999.0.0", "_blank")}>
           <p>Percobaan</p>
           <p>购课前试看</p>
         </CustomButton>
+        {/*<CustomButton onClick={() => navigate("/courseTry", { replace: false })}>*/}
+        {/*  <p>Percobaan</p>*/}
+        {/*  <p>购课前试看</p>*/}
+        {/*</CustomButton>*/}
       </Space>
     </div>
   )
