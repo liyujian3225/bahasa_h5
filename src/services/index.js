@@ -21,7 +21,8 @@ export const request = extend({
 //请求拦截
 request.interceptors.request.use((url, options) => {
   const token = localStorage.getItem("token");
-  const headers = { token };
+  const deviceId = localStorage.getItem("deviceId");
+  const headers = { token, deviceId };
   return {
     url,
     options: { ...options, headers }

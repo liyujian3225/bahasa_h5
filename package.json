@@ -11,6 +11,7 @@
   "dependencies": {
     "antd-mobile": "^5.32.1",
     "dayjs": "^1.11.9",
+    "fingerprintjs2": "^2.1.4",
     "umi": "^4.0.79"
   },
   "devDependencies": {
