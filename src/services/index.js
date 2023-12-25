@@ -20,9 +20,15 @@ export const request = extend({
 
 //请求拦截
 request.interceptors.request.use((url, options) => {
+  //设置登陆token
   const token = localStorage.getItem("token");
+  const headers = { token };
+  //设置设备ID
   const deviceId = localStorage.getItem("deviceId");
-  const headers = { token, deviceId };
+  options.data = {
+    ...options.data,
+    deviceId
+  }
   return {
     url,
     options: { ...options, headers }

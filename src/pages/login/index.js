@@ -66,6 +66,24 @@ const Login = (props) => {
       ],
     })
   }
+  const handleDeviceError = () => {
+    Modal.show({
+      content: (
+        <>
+          <AutoCenter style={{ fontSize: '24px', color: '#000' }}>登陆设备已达到上限</AutoCenter>
+          <AutoCenter style={{ fontSize: '14px', color: '#ff0000' }}>请在常用设备登陆或联系老师</AutoCenter>
+        </>
+      ),
+      closeOnAction: true,
+      actions: [
+        {
+          key: 'online',
+          text: '再试一次',
+          primary: true,
+        },
+      ],
+    })
+  }
   //表单信息
   const [form] = Form.useForm()
   const onFinish = () => {
@@ -73,7 +91,7 @@ const Login = (props) => {
     request.post('/business/web/member/signIn', {
       data: values
     }).then(res => {
-        const { success, content } = res;
+        const { success, content, message } = res;
         if(success) {
           const { name, token } = content;
           props.dispatch({
@@ -86,7 +104,10 @@ const Login = (props) => {
           })
           handleInputSuccess();
         }else {
-          handleInputError()
+          // if(message === "手机号不存在或密码错误") handleInputError();
+          // if(message === "登陆设备以达到上限,请联系管理员清除不常用设备") handleDeviceError();
+
+          handleDeviceError()
         }
       })
   }
