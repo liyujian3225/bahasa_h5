@@ -92,6 +92,9 @@ const Login = (props) => {
       data: values
     }).then(res => {
         const { success, content, message } = res;
+
+        console.log("success, content, message", success, content, message)
+
         if(success) {
           const { name, token } = content;
           props.dispatch({
@@ -104,10 +107,8 @@ const Login = (props) => {
           })
           handleInputSuccess();
         }else {
-          // if(message === "手机号不存在或密码错误") handleInputError();
-          // if(message === "登陆设备以达到上限,请联系管理员清除不常用设备") handleDeviceError();
-
-          handleDeviceError()
+          if(message === "手机号不存在或密码错误") handleInputError();
+          if(message === "登陆设备以达到上限，请联系管理员清除不常用设备") handleDeviceError();
         }
       })
   }
