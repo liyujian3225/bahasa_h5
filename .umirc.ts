@@ -13,6 +13,7 @@ export default defineConfig({
     '@primary-color': '#1DA57A'
   },
   proxy: {
+    //备用环境
     '/business': {
       'target': 'http://104.155.209.57:9000/business/',
       'changeOrigin': true,

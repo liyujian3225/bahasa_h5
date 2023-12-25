@@ -40,7 +40,7 @@ const Login = (props) => {
       ],
     })
   }
-
+  //登陆失败提示模态框（账户密码错误）
   const handleInputError = () => {
     Modal.show({
       content: (
@@ -66,6 +66,7 @@ const Login = (props) => {
       ],
     })
   }
+  //登陆失败提示模态框（设备过限）
   const handleDeviceError = () => {
     Modal.show({
       content: (
@@ -84,6 +85,12 @@ const Login = (props) => {
       ],
     })
   }
+  //查询设备数量
+  const searchDeviceNum = ((memberld) => {
+    request.get('/business/web/member/device-count/' + memberld).then(res => {
+      console.log(res)
+    })
+  })
   //表单信息
   const [form] = Form.useForm()
   const onFinish = () => {
@@ -92,11 +99,9 @@ const Login = (props) => {
       data: values
     }).then(res => {
         const { success, content, message } = res;
-
-        console.log("success, content, message", success, content, message)
-
         if(success) {
-          const { name, token } = content;
+          const { name, token, id } = content;
+          searchDeviceNum(id)
           props.dispatch({
             type: "user/changeToken",
             payload: token
