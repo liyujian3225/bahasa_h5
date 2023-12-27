@@ -88,7 +88,11 @@ const Login = (props) => {
   //查询设备数量
   const searchDeviceNum = ((memberld) => {
     request.get('/business/web/member/device-count/' + memberld).then(res => {
-      console.log(res)
+      const { content } = res;
+      props.dispatch({
+        type: "user/changeDeviceContent",
+        payload: content
+      })
     })
   })
   //表单信息

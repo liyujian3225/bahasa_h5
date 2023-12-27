@@ -35,7 +35,8 @@ export default {
     deviceId: localStorage.getItem("deviceId"),
     token: localStorage.getItem("token") || "",
     waterMarkContent: localStorage.getItem("waterMarkContent") || generatesRandomNumber(),
-    courseList: localStorage.getItem("courseList") ? JSON.parse(localStorage.getItem("courseList")) : []
+    courseList: localStorage.getItem("courseList") ? JSON.parse(localStorage.getItem("courseList")) : [],
+    deviceContent: 0,
   },
   reducers: {
     changeToken(state, { payload }) {
@@ -59,5 +60,12 @@ export default {
         courseList: payload,
       };
     },
+    changeDeviceContent(state, { payload }) {
+      localStorage.setItem("deviceContent", JSON.stringify(payload));
+      return {
+        ...state,
+        deviceContent: payload,
+      };
+    }
   },
 };
