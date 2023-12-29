@@ -45,7 +45,10 @@ export default defineConfig({
       href: 'https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.3/skins/default/aliplayer-min.css'
     },
   ],
-  headScripts: ['https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.3/aliplayer-h5-min.js'],
+  headScripts: [
+    'https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.3/aliplayer-h5-min.js',
+    { src: '/lib/aliplayercomponents-1.0.9.min.js' },
+  ],
 
   plugins: ['@umijs/plugins/dist/dva'],
   dva: {}

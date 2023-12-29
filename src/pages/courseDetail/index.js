@@ -70,6 +70,18 @@ const courseDetail = (props) => {
             "controlBarVisibility": "click",
             "showBarTime": 5000,
             "useH5Prism": true,
+            "components": [{
+              name: 'BulletScreenComponent',
+              type: AliPlayerComponent.BulletScreenComponent,
+              args: [
+                props.waterMarkContent,
+                {
+                  fontSize: '16px',
+                  color: '#00c1de'
+                },
+                'random'
+              ]
+            }]
           }, function (player) {
             setPlayer(player)
           });
@@ -107,23 +119,6 @@ const courseDetail = (props) => {
             上一课 Last
           </Button>
         </Space>
-        {/*<div*/}
-        {/*  className="operate"*/}
-        {/*  onClick={*/}
-        {/*    async () => {*/}
-        {/*      const result = await Dialog.confirm({*/}
-        {/*        content: '仅支持国外的同学使用，确定跳转？',*/}
-        {/*      })*/}
-        {/*      if (result) {*/}
-        {/*        window.location.href = "https://drive.google.com/drive/folders/1dGSwPbViA9SvL0giuJ8OCnUny7YkZoDA?usp=sharing"*/}
-        {/*      } else {*/}
-
-        {/*      }*/}
-        {/*    }*/}
-        {/*  }*/}
-        {/*>*/}
-        {/*  <span>练习</span>*/}
-        {/*</div>*/}
       </Space>
     </>
   )
