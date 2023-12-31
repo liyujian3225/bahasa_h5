@@ -59,7 +59,7 @@ const courseDetail = (props) => {
             id: "player-con",
             vid: currentVod,
             playauth: content,
-            height: "200px",
+            height: "300px",
             cover: './image/cover.jpg',
             "autoplay": false,
             "isLive": false, //是否为直播播放
@@ -74,10 +74,10 @@ const courseDetail = (props) => {
               name: 'BulletScreenComponent',
               type: AliPlayerComponent.BulletScreenComponent,
               args: [
-                props.waterMarkContent,
+                props.waterMarkContent + "，加油学习！",
                 {
                   fontSize: '16px',
-                  color: '#00c1de'
+                  color: 'rgba(136, 0, 174, 0.1)'
                 },
                 'random'
               ]
