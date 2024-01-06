@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {useNavigate, connect } from 'umi';
-import {Avatar, Collapse, Space} from 'antd-mobile'
+import {Avatar, Collapse, Space, Modal, Radio} from 'antd-mobile'
 import { request } from '@/services';
 
 const titleStyle = {
@@ -47,11 +47,33 @@ const courseCatalog = (props) => {
   useEffect(() => { queryCourse() }, [])
   //观看课程
   const navigate = useNavigate();
-  const dumpDetail = ({ title, vod }) => {
-    navigate("/confidentiality", {
-      replace: false,
-      state: { title, vod }
-    })
+  const dumpDetail = ({ title, vod }, index) => {
+    if(index > 0) {
+      Modal.confirm({
+        title: '在看课程前，我们需要知道您的情况',
+        content: <Space direction='vertical' block>
+          <Radio block>
+            <span style={{color: 'blue'}}>我已经认真看完上节课的内容同时做好了笔记，背诵好了所有知识点，做好了学习下节课的准备。</span>
+          </Radio>
+          <Radio block>
+            <span style={{color: 'red'}}>我没有看过上节课，或者我并没有认真背诵好上节课的单词，但是我仍然希望观看这节课，我愿意承担学到后面越来越学不懂的风险。</span>
+          </Radio>
+        </Space>,
+        confirmText: "开始学习",
+        cancelText: "我不学了",
+        onConfirm: () => {
+          navigate("/confidentiality", {
+            replace: false,
+            state: { title, vod }
+          })
+        },
+      })
+    }else {
+      navigate("/confidentiality", {
+        replace: false,
+        state: { title, vod }
+      })
+    }
   }
 
   return (
@@ -82,8 +104,8 @@ const courseCatalog = (props) => {
             title={<CustomTitle title={item.name} />}>
             <ul>
               {
-                item.sectionList.map(jItem => (
-                  <li style={sectionStyle} key={jItem.id} onClick={() => dumpDetail(jItem)}>
+                item.sectionList.map((jItem, jIndex) => (
+                  <li style={sectionStyle} key={jItem.id} onClick={() => dumpDetail(jItem, jIndex)}>
                     {jItem.title}
                   </li>
                 ))
