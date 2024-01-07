@@ -47,26 +47,41 @@ const courseCatalog = (props) => {
   useEffect(() => { queryCourse() }, [])
   //观看课程
   const navigate = useNavigate();
+  const [value, setValue] = useState("0")
   const dumpDetail = ({ title, vod }, index) => {
     if(index > 0) {
-      Modal.confirm({
+      Modal.show({
         title: '在看课程前，我们需要知道您的情况',
-        content: <Space direction='vertical' block>
-          <Radio block>
-            <span style={{color: 'blue'}}>我已经认真看完上节课的内容同时做好了笔记，背诵好了所有知识点，做好了学习下节课的准备。</span>
-          </Radio>
-          <Radio block>
-            <span style={{color: 'red'}}>我没有看过上节课，或者我并没有认真背诵好上节课的单词，但是我仍然希望观看这节课，我愿意承担学到后面越来越学不懂的风险。</span>
-          </Radio>
-        </Space>,
-        confirmText: "开始学习",
-        cancelText: "我不学了",
-        onConfirm: () => {
-          navigate("/confidentiality", {
-            replace: false,
-            state: { title, vod }
-          })
-        },
+        content:
+          <Radio.Group value={value} onChange={(v) => { setValue(v) }}>
+            <Space direction='vertical'>
+              <Radio value='1'>
+                <span style={{color: 'blue'}}>我已经认真看完上节课的内容同时做好了笔记，背诵好了所有知识点，做好了学习下节课的准备。</span>
+              </Radio>
+              <Radio value='2'>
+                <span style={{color: 'red'}}>我没有看过上节课，或者我并没有认真背诵好上节课的单词，但是我仍然希望观看这节课，我愿意承担学到后面越来越学不懂的风险。</span>
+              </Radio>
+            </Space>
+          </Radio.Group>,
+        actions: [
+          {
+            key: 'agree',
+            text: '开始学习',
+            disabled: !(value === "1" || value === "2"),
+            primary: true,
+            onClick: () => {
+              navigate("/confidentiality", {
+                replace: false,
+                state: { title, vod }
+              })
+            }
+          },
+          {
+            key: 'refuse',
+            text: '我不学了'
+          },
+        ],
+        closeOnAction: true
       })
     }else {
       navigate("/confidentiality", {
