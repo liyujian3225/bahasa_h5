@@ -47,13 +47,12 @@ const courseCatalog = (props) => {
   useEffect(() => { queryCourse() }, [])
   //观看课程
   const navigate = useNavigate();
-  const [value, setValue] = useState("0")
   const dumpDetail = ({ title, vod }, index) => {
     if(index > 0) {
       Modal.show({
         title: '在看课程前，我们需要知道您的情况',
         content:
-          <Radio.Group value={value} onChange={(v) => { setValue(v) }}>
+          <Radio.Group defaultValue='2' >
             <Space direction='vertical'>
               <Radio value='1'>
                 <span style={{color: 'blue'}}>我已经认真看完上节课的内容同时做好了笔记，背诵好了所有知识点，做好了学习下节课的准备。</span>
@@ -67,7 +66,7 @@ const courseCatalog = (props) => {
           {
             key: 'agree',
             text: '开始学习',
-            disabled: !(value === "1" || value === "2"),
+            disabled: false,
             primary: true,
             onClick: () => {
               navigate("/confidentiality", {
