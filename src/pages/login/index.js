@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate, connect } from 'umi';
-import { Modal, Form, Input, Button, AutoCenter } from 'antd-mobile'
+import { Modal, Form, Input, Button, AutoCenter, Image } from 'antd-mobile'
 import { request } from '@/services';
 
 const titleStyle = {
@@ -150,8 +150,9 @@ const Login = (props) => {
         }
       >
         <Form.Header>
-          <AutoCenter style={titleStyle}>Autentikasi</AutoCenter>
-          <AutoCenter style={titleStyle}>⽤户身份验证</AutoCenter>
+          {/*<AutoCenter style={titleStyle}>Autentikasi</AutoCenter>*/}
+          {/*<AutoCenter style={titleStyle}>⽤户身份验证</AutoCenter>*/}
+          <Image width='80%' style={{ margin: '0 auto '}} src='./image/logo_word.png' />
           <div style={{ width: '100%', height: '40px' }}/>
         </Form.Header>
         <Form.Item
