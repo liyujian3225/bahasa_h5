@@ -1,10 +1,19 @@
 import React, { useState } from 'react'
-import { Space, Avatar, Mask, SpinLoading } from 'antd-mobile'
+import { Space, Mask, SpinLoading, Button, Footer, Image } from 'antd-mobile'
 import { useNavigate } from 'umi';
-import CustomButton from "@/components/CustomButton"
 import './index.less';
 
 export default () => {
+  const links = [
+    {
+      text: '东东印尼语YouTube',
+      href: 'https://www.youtube.com/channel/UCNz0CuIKBXpizEmn8akC42w',
+    },
+    {
+      text: '东东印尼语抖音',
+      href: 'https://v.douyin.com/iNNrghAv/ 8@5.com',
+    },
+  ]
   let navigate = useNavigate();
   const [visible, setVisible] = useState(true)
   setTimeout(() => {
@@ -20,26 +29,23 @@ export default () => {
           </Space>
         </div>
       </Mask>
-      <Space
-        className="mySpace"
-        direction='vertical'
-        block={true}
-        style={{ '--gap-vertical': '40px' }}
-      >
-        <Avatar src='./image/logo.png'  style={{ '--size': '128px', margin: '0 auto' }} />
-        <CustomButton onClick={() => navigate("/login", { replace: false })}>
+      <Space className="mySpace" direction='vertical' block={true}>
+        <Image width='80%' style={{ margin: '0 auto '}} src='./image/login_home.png' />
+        <Button color='primary' block onClick={() => navigate("/login", { replace: false })}>
           <p>Masuk</p>
           <p>用户登录</p>
-        </CustomButton>
-        <CustomButton onClick={() => window.open("https://www.bilibili.com/video/BV1ta4y137ji/?spm_id_from=333.999.0.0", "_blank")}>
-          <p>Percobaan</p>
-          <p>购课前试看</p>
-        </CustomButton>
-        {/*<CustomButton onClick={() => navigate("/courseTry", { replace: false })}>*/}
-        {/*  <p>Percobaan</p>*/}
-        {/*  <p>购课前试看</p>*/}
-        {/*</CustomButton>*/}
+        </Button>
+        <Button color='primary' fill='outline' block onClick={() => window.open("https://taioassets.oss-cn-beijing.aliyuncs.com/Pdfs/%E4%B8%9C%E4%B8%9C%E5%8D%B0%E5%B0%BC%E8%AF%AD%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%8D%8F%E8%AE%AE.pdf", "_blank")}>
+          <p>Perjanjian Les</p>
+          <p>用户协议</p>
+        </Button>
       </Space>
+      <Footer
+        className="myFooter"
+        label='东东印尼语'
+        content='@ 2019-2024 PT BahasaDong All rights reserved'
+        links={links}
+      ></Footer>
     </div>
   )
 }

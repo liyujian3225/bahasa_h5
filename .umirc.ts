@@ -32,10 +32,6 @@ export default defineConfig({
     { path: "/courseCatalog", component: "courseCatalog", name: "课程目录" },
     { path: "/confidentiality", component: "confidentiality", name: "保密协议" },
     { path: "/courseDetail", component: "courseDetail", name: "课程查看" },
-
-    { path: "/courseTry", component: "courseTry", name: "Hubungi Kami 联系我们" },
-    { path: "/courseIntroduce", component: "courseIntroduce", name: "课程介绍" },
-    { path: "/contactUs", component: "contactUs", name: "Hubungi Kami 联系我们" },
   ],
   alias: {},
   links: [

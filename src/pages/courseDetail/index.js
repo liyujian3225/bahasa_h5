@@ -92,7 +92,7 @@ const courseDetail = (props) => {
 
   return (
     <>
-      <Space block={true} align="center" justify="center" style={{ marginBottom: '20px' }}>
+      <Space block={true} align="center" justify="center" style={{ marginBottom: '12px' }}>
         <Avatar src='./image/logo.png'  style={{ '--size': '56px', margin: '0 auto' }} />
         <span style={titleStyle}>你好，{props.waterMarkContent}</span>
       </Space>
@@ -102,23 +102,21 @@ const courseDetail = (props) => {
       <div className="videoContain">
         <div id="player-con"/>
       </div>
-      <Space block justify="between" style={{ width: '100%' }}>
-        <Space block direction='vertical' style={{ '--gap-vertical': '20px' }}>
-          <Button
-            block
-            color='primary'
-            size='large'
-            onClick={() => switchCourse('next')}>
-            下一课 Next
-          </Button>
-          <Button
-            block
-            color='primary'
-            size='large'
-            onClick={() => switchCourse('prve')}>
-            上一课 Last
-          </Button>
-        </Space>
+      <Space block justify='between'>
+        <Button
+          block
+          color='primary'
+          size='large'
+          onClick={() => switchCourse('prve')}>
+          上一课 Last
+        </Button>
+        <Button
+          block
+          color='primary'
+          size='large'
+          onClick={() => switchCourse('next')}>
+          下一课 Next
+        </Button>
       </Space>
     </>
   )

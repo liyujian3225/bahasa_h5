@@ -1,15 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate, connect } from 'umi';
 import { Modal, Form, Input, Button, AutoCenter, Image } from 'antd-mobile'
 import { request } from '@/services';
-
-const titleStyle = {
-  fontSize: '28px',
-  fontWeight: 'bold',
-  color: '#000',
-}
+import './index.less';
 
 const Login = (props) => {
+  const [loading, setLoading] = useState(false)
   //登陆成功提示模态框
   let navigate = useNavigate();
   const handleInputSuccess = () => {
@@ -98,11 +94,13 @@ const Login = (props) => {
   //表单信息
   const [form] = Form.useForm()
   const onFinish = () => {
+    setLoading(true)
     const values = form.getFieldsValue();
     request.post('/business/web/member/signIn', {
       data: values
     }).then(res => {
         const { success, content, message } = res;
+        setLoading(false)
         if(success) {
           const { name, token, id } = content;
           searchDeviceNum(id)
@@ -124,15 +122,9 @@ const Login = (props) => {
   return (
     <>
       <Form
+        className='myForm'
         layout='horizontal'
         mode='card'
-        style={{
-          height: '430px',
-          position: 'absolute',
-          top: 0, bottom: 0,
-          left: 0, right: 0,
-          margin: 'auto'
-        }}
         form={form}
         initialValues={{
           mobile: '',
@@ -141,6 +133,8 @@ const Login = (props) => {
         onFinish={onFinish}
         footer={
           <Button
+            loading={loading}
+            loadingText='登陆中'
             color='primary'
             type='submit'
             block
@@ -150,9 +144,9 @@ const Login = (props) => {
         }
       >
         <Form.Header>
-          {/*<AutoCenter style={titleStyle}>Autentikasi</AutoCenter>*/}
-          {/*<AutoCenter style={titleStyle}>⽤户身份验证</AutoCenter>*/}
-          <Image width='80%' style={{ margin: '0 auto '}} src='./image/logo_word.png' />
+          <AutoCenter className='title'>Autentikasi</AutoCenter>
+          <AutoCenter className='subTitle'>⽤户身份验证</AutoCenter>
+          {/*<Image width='80%' style={{ margin: '0 auto '}} src='./image/logo_word.png' />*/}
           <div style={{ width: '100%', height: '40px' }}/>
         </Form.Header>
         <Form.Item
