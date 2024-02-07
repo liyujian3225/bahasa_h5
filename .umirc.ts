@@ -48,6 +48,11 @@ export default defineConfig({
   headScripts: [
     'https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.3/aliplayer-h5-min.js',
     { src: '/lib/aliplayercomponents-1.0.9.min.js' },
+    {
+      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1631523521014671',
+      crossorigin: 'crossorigin',
+      async: true
+    },
   ],
 
   plugins: ['@umijs/plugins/dist/dva'],
