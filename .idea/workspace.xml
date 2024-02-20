@@ -7,17 +7,7 @@
     <list default="true" id="04c1406b-475c-495a-b697-7b13ed4c5e66" name="更改" comment="登录页面，logo图片替换">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.umirc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.umirc.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contactUs/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contactUs/index.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courseCatalog/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseCatalog/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/courseDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseDetail/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courseDetail/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseDetail/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courseIntroduce/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courseTry/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courseTry/index.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +50,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
     "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate",
-    "ts.external.directory.path": "D:\\Documents\\mySpace\\bahasa_h5\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "/Users/liyujian/Documents/mySpace/bahasa_h5/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -83,6 +73,7 @@
       <workItem from="1707008460677" duration="482000" />
       <workItem from="1707102683937" duration="241000" />
       <workItem from="1707114598902" duration="1514000" />
+      <workItem from="1708433475106" duration="3156000" />
     </task>
     <task id="LOCAL-00001" summary="课程开始学习相关交互逻辑修改">
       <option name="closed" value="true" />

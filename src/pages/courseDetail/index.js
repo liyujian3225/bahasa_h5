@@ -17,6 +17,13 @@ const courseDetail = (props) => {
   const [currentVod, setCurrentVod] = useState(vod);
   const [player, setPlayer] = useState(null);
 
+  if(player) {
+    player.on('ended', function() {
+      switchCourse('next')
+      console.log('视频播放结束')
+    })
+  }
+
   const courseList = props.courseList;
   const switchCourse = async (type) => {
     const index = courseList.findIndex(item => item.vod === currentVod);
@@ -61,7 +68,7 @@ const courseDetail = (props) => {
             playauth: content,
             height: "300px",
             cover: './image/cover.jpg',
-            "autoplay": false,
+            "autoplay": true,
             "isLive": false, //是否为直播播放
             "rePlay": false,
             "playsinline": true,
@@ -83,7 +90,7 @@ const courseDetail = (props) => {
               ]
             }]
           }, function (player) {
-            setPlayer(player)
+            setPlayer(player);
           });
         }
       })
