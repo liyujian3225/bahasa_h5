@@ -138,8 +138,9 @@ const Login = (props) => {
             color='primary'
             type='submit'
             block
-            size='large'>
-            登陆系统 Masuk
+            size='mini'>
+            <p>Masuk</p>
+            <p>登陆系统</p>
           </Button>
         }
       >

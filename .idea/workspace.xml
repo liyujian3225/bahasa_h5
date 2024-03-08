@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04c1406b-475c-495a-b697-7b13ed4c5e66" name="更改" comment="登录页面，logo图片替换">
+    <list default="true" id="04c1406b-475c-495a-b697-7b13ed4c5e66" name="更改" comment="视频点播界面添加连续播放功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.umirc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.umirc.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/courseDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseDetail/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,22 +40,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate",
-    "ts.external.directory.path": "/Users/liyujian/Documents/mySpace/bahasa_h5/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;cn.yiiguxing.plugin.translate&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/liyujian/Documents/mySpace/bahasa_h5/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\mySpace\bahasa_h5\public\image" />
@@ -73,7 +75,15 @@
       <workItem from="1707008460677" duration="482000" />
       <workItem from="1707102683937" duration="241000" />
       <workItem from="1707114598902" duration="1514000" />
-      <workItem from="1708433475106" duration="3156000" />
+      <workItem from="1708433475106" duration="3305000" />
+      <workItem from="1708786954886" duration="50000" />
+      <workItem from="1708787011592" duration="30000" />
+      <workItem from="1708853550706" duration="687000" />
+      <workItem from="1708854427735" duration="77000" />
+      <workItem from="1709034965837" duration="692000" />
+      <workItem from="1709042768521" duration="1408000" />
+      <workItem from="1709639505478" duration="2345000" />
+      <workItem from="1709730188495" duration="362000" />
     </task>
     <task id="LOCAL-00001" summary="课程开始学习相关交互逻辑修改">
       <option name="closed" value="true" />
@@ -91,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707115467888</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="视频点播界面添加连续播放功能">
+      <option name="closed" value="true" />
+      <created>1708436733580</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708436733580</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +135,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="课程开始学习相关交互逻辑修改" />
     <MESSAGE value="登录页面，logo图片替换" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录页面，logo图片替换" />
+    <MESSAGE value="视频点播界面添加连续播放功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="视频点播界面添加连续播放功能" />
   </component>
 </project>
