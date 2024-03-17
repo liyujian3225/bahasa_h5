@@ -1,5 +1,9 @@
 import { defineConfig } from "umi";
 
+// 是否是生产环境
+const isProductionEnvironment = true;
+const baseUrl = isProductionEnvironment ? "http://www.bahasaindo.net" : "http://bahasaindo.com";
+
 //配置文件，包含 Umi 所有非运行时配置
 export default defineConfig({
   title: "东东印尼语",
@@ -15,12 +19,12 @@ export default defineConfig({
   proxy: {
     //备用环境
     '/business': {
-      'target': 'http://104.155.209.57:9000/business/',
+      'target': baseUrl + '/business/',
       'changeOrigin': true,
       'pathRewrite': { '^/business' : '' },
     },
     '/file': {
-      'target': 'http://104.155.209.57:9000/file/',
+      'target': baseUrl + '/file/',
       'changeOrigin': true,
       'pathRewrite': { '^/file' : '' },
     }

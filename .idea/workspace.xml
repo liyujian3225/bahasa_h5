@@ -7,9 +7,9 @@
     <list default="true" id="04c1406b-475c-495a-b697-7b13ed4c5e66" name="更改" comment="视频点播界面添加连续播放功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.umirc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.umirc.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courseDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseDetail/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/courseCatalog/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseCatalog/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.less" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +84,14 @@
       <workItem from="1709042768521" duration="1408000" />
       <workItem from="1709639505478" duration="2345000" />
       <workItem from="1709730188495" duration="362000" />
+      <workItem from="1709856729455" duration="43000" />
+      <workItem from="1710415718944" duration="3189000" />
+      <workItem from="1710420913088" duration="426000" />
+      <workItem from="1710422081418" duration="2417000" />
+      <workItem from="1710424674867" duration="125000" />
+      <workItem from="1710424806247" duration="189000" />
+      <workItem from="1710425005211" duration="128000" />
+      <workItem from="1710653310729" duration="344000" />
     </task>
     <task id="LOCAL-00001" summary="课程开始学习相关交互逻辑修改">
       <option name="closed" value="true" />
@@ -109,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708436733580</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="视频点播界面添加连续播放功能">
+      <option name="closed" value="true" />
+      <created>1709856745533</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709856745533</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

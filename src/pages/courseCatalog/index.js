@@ -96,12 +96,9 @@ const courseCatalog = (props) => {
         等情况，请耐心等待。如果长时间无法加载，请<span style={{color: '#ff0000'}}>切换网络重新登陆</span>。
       </p>
       <p style={{fontSize: '20px', marginBottom: '12px'}}>
-        <span>
-          您已经在
-          <span style={{color: '#ff0000', fontWeight: 'bold'}}>{props.deviceContent}</span>
-          个设备上登陆了学习系统，您还可以在
-          <span style={{color: '#ff0000', fontWeight: 'bold'}}>{4 - props.deviceContent}</span>
-          个设备上继续登陆。</span>
+        <span>您已经在</span>
+        <span style={{color: '#ff0000', fontWeight: 'bold'}}>{props.deviceContent}</span>
+        <span>个设备上登陆了学习系统。</span>
       </p>
       <Collapse accordion>
         {chaptersData.map((item, index) => (

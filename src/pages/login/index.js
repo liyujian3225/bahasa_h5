@@ -1,40 +1,16 @@
 import React, { useState } from 'react'
 import { useNavigate, connect } from 'umi';
-import { Modal, Form, Input, Button, AutoCenter, Image } from 'antd-mobile'
+import { Modal, Form, Input, Button, AutoCenter, Checkbox, Space } from 'antd-mobile'
 import { request } from '@/services';
 import './index.less';
 
 const Login = (props) => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const [value, setValue] = useState([])
   //登陆成功提示模态框
   let navigate = useNavigate();
   const handleInputSuccess = () => {
-    Modal.show({
-      content: (
-        <>
-          <AutoCenter style={{ fontSize: '14px', color: '#000' }}>本系统仅供已经购买了课程的同学使用，如果您未买课程，请您立即关闭。</AutoCenter>
-        </>
-      ),
-      closeOnAction: true,
-      actions: [
-        {
-          key: 'download',
-          text: '我已购买',
-          primary: true,
-          onClick: async () => {
-            navigate("/courseCatalog", { replace: false });
-          }
-        },
-        {
-          key: 'online',
-          text: '立即关闭',
-          primary: true,
-          onClick: () => {
-            window.location.href = "https://www.gov.cn/guoqing/2021-10/29/content_5647633.htm"
-          }
-        },
-      ],
-    })
+    navigate("/courseCatalog", { replace: false });
   }
   //登陆失败提示模态框（账户密码错误）
   const handleInputError = () => {
@@ -138,6 +114,7 @@ const Login = (props) => {
             color='primary'
             type='submit'
             block
+            disabled={value.length < 4}
             size='mini'>
             <p>Masuk</p>
             <p>登陆系统</p>
@@ -163,6 +140,26 @@ const Login = (props) => {
           <Input placeholder='请输入密码' />
         </Form.Item>
       </Form>
+      <div className='attention'>
+        <AutoCenter style={{ marginBottom: 10 }}>
+          请您注意，您购买的帐号<span style={{ color: '#ff0000' }}>仅供您个人使用</span>。若您将帐号共享至他人使用，您的帐号会在无警告的前提下永久封禁。课程已在两地进行版权登记，
+          <span style={{ color: '#ff0000' }}>任何盗版课程的行为将会受到检控</span>。
+        </AutoCenter>
+        <Checkbox.Group
+          className="smallCheckboxGroup"
+          value={value}
+          onChange={val => {
+            setValue(val);
+          }}
+        >
+          <Space direction='vertical'>
+            <Checkbox className="smallCheckbox" value='one'>我是本帐号持有人</Checkbox>
+            <Checkbox className="smallCheckbox" value='two'>我同意《课程保密协议》</Checkbox>
+            <Checkbox className="smallCheckbox" value='three'>我不会将此帐号与他人共享</Checkbox>
+            <Checkbox className="smallCheckbox" value='four'>我愿意承担违反保密协议的法律责任</Checkbox>
+          </Space>
+        </Checkbox.Group>
+      </div>
     </>
   )
 }
