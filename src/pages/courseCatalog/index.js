@@ -83,7 +83,7 @@ const courseCatalog = (props) => {
   }
 
   return (
-    <>
+    <div className="courseCatalog">
       <Space block={true} align="center" justify="center" style={{ marginBottom: '12px' }}>
         <Avatar src='./image/logo.png'  style={{ '--size': '56px', margin: '0 auto' }} />
         <span className='title'>你好，{props.waterMarkContent}</span>
@@ -120,7 +120,7 @@ const courseCatalog = (props) => {
           </Collapse.Panel>
         ))}
       </Collapse>
-    </>
+    </div>
   )
 }
 

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "antd-mobile": "^5.32.1",
+    "antd-mobile-icons": "^0.3.0",
     "dayjs": "^1.11.9",
     "fingerprintjs2": "^2.1.4",
     "umi": "^4.0.79"

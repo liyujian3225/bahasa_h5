@@ -1,18 +1,36 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavBar, WaterMark } from 'antd-mobile'
 import { useNavigate, useRouteProps, Outlet, connect } from 'umi';
+import { SetOutline } from 'antd-mobile-icons'
 
 const Layout = (props) => {
-  const navigate = useNavigate();
   const routeProps = useRouteProps()
   const { name } = routeProps;
 
+  const navigate = useNavigate();
+  const back = () => {
+    navigate(-1)
+  }
+
+  const right = (
+    <div style={{ fontSize: 24 }} onClick={() => navigate("/setting", { replace: true })}>
+      <SetOutline />
+    </div>
+  )
+
   return (
-    <div style={{ width: '100%', height: '100%', padding: '12px', boxSizing: 'border-box' }}>
-      { name && <NavBar style={{ padding: 0 }} onBack={() => navigate(-1)}>{ name }</NavBar> }
+    <>
+      { name &&
+        <NavBar
+          back='返回'
+          right={right}
+          onBack={back}>
+          { name }
+        </NavBar>
+      }
       <Outlet />
       <WaterMark content={props.waterMarkContent} />
-    </div>
+    </>
   );
 }
 

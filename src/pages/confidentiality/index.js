@@ -7,7 +7,6 @@ import './index.less'
 const titleStyle = {
   fontSize: '20px',
   fontWeight: 'bold',
-  color: '#000',
 }
 
 const CustomTitle = ({ title }) => {

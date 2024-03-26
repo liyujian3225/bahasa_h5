@@ -96,7 +96,7 @@ const Login = (props) => {
       })
   }
   return (
-    <>
+    <div className="login">
       <Form
         className='myForm'
         layout='horizontal'
@@ -124,8 +124,6 @@ const Login = (props) => {
         <Form.Header>
           <AutoCenter className='title'>Autentikasi</AutoCenter>
           <AutoCenter className='subTitle'>⽤户身份验证</AutoCenter>
-          {/*<Image width='80%' style={{ margin: '0 auto '}} src='./image/logo_word.png' />*/}
-          <div style={{ width: '100%', height: '40px' }}/>
         </Form.Header>
         <Form.Item
           name='mobile'
@@ -160,7 +158,7 @@ const Login = (props) => {
           </Space>
         </Checkbox.Group>
       </div>
-    </>
+    </div>
   )
 }
 

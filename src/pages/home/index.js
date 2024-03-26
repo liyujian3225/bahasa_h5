@@ -4,6 +4,10 @@ import { useNavigate } from 'umi';
 import './index.less';
 
 export default () => {
+  let navigate = useNavigate();
+  const [visible, setVisible] = useState(true)
+  setTimeout(() => { setVisible(false) }, 500);
+
   const links = [
     {
       text: '东东印尼语YouTube',
@@ -14,11 +18,7 @@ export default () => {
       href: 'https://v.douyin.com/iNNrghAv/ 8@5.com',
     },
   ]
-  let navigate = useNavigate();
-  const [visible, setVisible] = useState(true)
-  setTimeout(() => {
-    setVisible(false);
-  }, 500)
+
   return (
     <div className="home">
       <Mask opacity='thick' visible={visible}>
@@ -43,7 +43,7 @@ export default () => {
           axis='xy'
           magnetic='x'
           style={{
-            '--initial-position-bottom': '24px',
+            '--initial-position-bottom': '96px',
             '--initial-position-right': '24px',
             '--edge-distance': '24px',
           }}

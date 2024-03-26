@@ -98,7 +98,7 @@ const courseDetail = (props) => {
   }, [ currentVod ])
 
   return (
-    <>
+    <div className="courseDetail">
       <Space block={true} align="center" justify="center" style={{ marginBottom: '12px' }}>
         <Avatar src='./image/logo.png'  style={{ '--size': '56px', margin: '0 auto' }} />
         <span style={titleStyle}>你好，{props.waterMarkContent}</span>
@@ -125,7 +125,7 @@ const courseDetail = (props) => {
           下一课 Next
         </Button>
       </Space>
-    </>
+    </div>
   )
 }
 

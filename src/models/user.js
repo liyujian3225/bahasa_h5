@@ -1,3 +1,4 @@
+//随机水印
 const generatesRandomNumber = () => {
   let res = ''
   for(let i = 0; i < 12; i++){
@@ -32,7 +33,6 @@ if (window.requestIdleCallback) {
 
 export default {
   state: {
-    deviceId: localStorage.getItem("deviceId"),
     token: localStorage.getItem("token") || "",
     waterMarkContent: localStorage.getItem("waterMarkContent") || generatesRandomNumber(),
     courseList: localStorage.getItem("courseList") ? JSON.parse(localStorage.getItem("courseList")) : [],
