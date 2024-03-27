@@ -113,14 +113,12 @@ const courseDetail = (props) => {
         <Button
           block
           color='primary'
-          size='mini'
           onClick={() => switchCourse('prve')}>
           上一课 Last
         </Button>
         <Button
           block
           color='primary'
-          size='mini'
           onClick={() => switchCourse('next')}>
           下一课 Next
         </Button>

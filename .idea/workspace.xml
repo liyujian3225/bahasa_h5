@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04c1406b-475c-495a-b697-7b13ed4c5e66" name="更改" comment="暗黑模式、老人模式，添加开发">
-      <change beforePath="$PROJECT_DIR$/.umirc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.umirc.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/global.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.less" afterDir="false" />
+    <list default="true" id="04c1406b-475c-495a-b697-7b13ed4c5e66" name="更改" comment="暗黑模式、全局样式调整">
+      <change beforePath="$PROJECT_DIR$/src/pages/confidentiality/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/confidentiality/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/confidentiality/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/confidentiality/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/courseCatalog/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseCatalog/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/courseCatalog/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseCatalog/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/courseDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseDetail/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/courseDetail/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseDetail/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/courseList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseList/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/setting/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/setting/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,23 +51,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/liyujian/Documents/mySpace/bahasa_h5/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "/Users/liyujian/Documents/mySpace/bahasa_h5/src/pages/courseList",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "ts.external.directory.path": "/Users/liyujian/Documents/mySpace/bahasa_h5/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/courseList" />
+      <recent name="$PROJECT_DIR$/src/pages/courseCatalog" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\mySpace\bahasa_h5\public\image" />
     </key>
@@ -97,7 +109,7 @@
       <workItem from="1710425005211" duration="128000" />
       <workItem from="1710653310729" duration="344000" />
       <workItem from="1710656073590" duration="322000" />
-      <workItem from="1711459739569" duration="10208000" />
+      <workItem from="1711459739569" duration="18666000" />
     </task>
     <task id="LOCAL-00001" summary="课程开始学习相关交互逻辑修改">
       <option name="closed" value="true" />
@@ -155,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711468664341</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="暗黑模式、全局样式调整">
+      <option name="closed" value="true" />
+      <created>1711497940351</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711497940351</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +204,7 @@
     <MESSAGE value="视频点播界面添加连续播放功能" />
     <MESSAGE value="登录界面，同意注意事项后才能登录" />
     <MESSAGE value="暗黑模式、老人模式，添加开发" />
-    <option name="LAST_COMMIT_MESSAGE" value="暗黑模式、老人模式，添加开发" />
+    <MESSAGE value="暗黑模式、全局样式调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="暗黑模式、全局样式调整" />
   </component>
 </project>

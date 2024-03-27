@@ -1,25 +1,19 @@
 .courseCatalog {
-  height: 100%;
+  padding: 12px;
   background-color: var(--adm-color-background);
-  .courseCard {
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    span {
-      font-size: 20px;
-      font-weight: bold;
-    }
-  }
-  .title {
-    font-size: 28px;
-    font-weight: bold;
-  }
-  .subTitle {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .sectionItem {
+  p.reminder {
     margin-bottom: 12px;
-    font-size: 18px;
+  }
+  ul.courseCatalogCard {
+    li {
+      border-radius: 5px;
+      margin-bottom: 12px;
+      &:first-child {
+        background: #fcf5f4;
+      }
+      &:last-child {
+        background: #f2f6fb;
+      }
+    }
   }
 }
