@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04c1406b-475c-495a-b697-7b13ed4c5e66" name="更改" comment="登录界面，同意注意事项后才能登录">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="04c1406b-475c-495a-b697-7b13ed4c5e66" name="更改" comment="暗黑模式、老人模式，添加开发">
       <change beforePath="$PROJECT_DIR$/.umirc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.umirc.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/global.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/confidentiality/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/confidentiality/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/confidentiality/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/confidentiality/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courseCatalog/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseCatalog/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courseCatalog/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseCatalog/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courseDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseDetail/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courseDetail/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courseDetail/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.less" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +97,7 @@
       <workItem from="1710425005211" duration="128000" />
       <workItem from="1710653310729" duration="344000" />
       <workItem from="1710656073590" duration="322000" />
-      <workItem from="1711459739569" duration="8454000" />
+      <workItem from="1711459739569" duration="10208000" />
     </task>
     <task id="LOCAL-00001" summary="课程开始学习相关交互逻辑修改">
       <option name="closed" value="true" />
@@ -154,7 +139,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710656322901</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="暗黑模式、老人模式，添加开发">
+      <option name="closed" value="true" />
+      <created>1711468649876</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711468649876</updated>
+    </task>
+    <task id="LOCAL-00007" summary="暗黑模式、老人模式，添加开发">
+      <option name="closed" value="true" />
+      <created>1711468664341</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711468664341</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +183,7 @@
     <MESSAGE value="登录页面，logo图片替换" />
     <MESSAGE value="视频点播界面添加连续播放功能" />
     <MESSAGE value="登录界面，同意注意事项后才能登录" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录界面，同意注意事项后才能登录" />
+    <MESSAGE value="暗黑模式、老人模式，添加开发" />
+    <option name="LAST_COMMIT_MESSAGE" value="暗黑模式、老人模式，添加开发" />
   </component>
 </project>
