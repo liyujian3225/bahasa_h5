@@ -1,0 +1,105 @@
+.login {
+  padding-top: 16px;
+  .img_login {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .loginContain {
+    padding: 20px 16px 0;
+    border-radius: 24px 24px 0 0;
+    background: #ffffff;
+    .adm-form-item {
+      background: #f6f7f9;
+      border-radius: 12px;
+      border: 1px solid #f6f7f9;
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+    .adm-list-body {
+      border: 1px solid #ffffff;
+      border-radius: 16px;
+    }
+    .adm-form-footer {
+      padding: 16px 0;
+    }
+    .adm-list-item-content {
+      border-top: unset;
+    }
+  }
+  .loginHeader {
+    margin-bottom: 32px;
+    span:first-child {
+      font-size: 26px;
+      font-weight: bold;
+      margin-right: 15px;
+    }
+    span:nth-child(2) {
+      font-size: 14px;
+      font-weight: bold;
+      opacity: 0.6;
+    }
+    span:last-child {
+      font-size: 14px;
+      font-weight: bold;
+      opacity: 0.6;
+    }
+  }
+  .loginBtn {
+    height: 62px;
+    --background-color: #f24e4c;
+    --border-radius: 12px;
+    --border-width: 0;
+    .loginBtnCon {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .loginBtnConLeft {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        .loginIcon {
+          --width: 46px;
+          --height: 46px;
+          margin-right: 8px;
+        }
+        span {
+          font-size: 28px;
+        }
+      }
+      .loginBtnConRight {
+        p {
+          text-align: left;
+        }
+      }
+    }
+  }
+  .confidentialityBlock {
+    padding: 0 16px 0;
+    box-sizing: border-box;
+    .confidentialityTxt {
+      padding: 8px;
+      box-sizing: border-box;
+      background: #fff7e3;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      .questionIcon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+      .questiontxt {
+        flex: 1;
+      }
+    }
+    .confidentialityCheckbox {
+      --icon-size: 18px;
+      --font-size: 14px;
+      --gap: 6px;
+    }
+  }
+}
