@@ -7,6 +7,7 @@ import "./index.less"
 const courseDetail = (props) => {
   const stateParams = useLocation();
   const { id, title, vod } = stateParams.state;
+  const [currentId, setCurrentId] = useState(id);
   const [currentTitle, setCurrentTitle] = useState(title);
   const [currentVod, setCurrentVod] = useState(vod);
   const [player, setPlayer] = useState(null);
@@ -14,21 +15,14 @@ const courseDetail = (props) => {
   if(player) {
     player.on('ended', function() {
       switchCourse('next')
-      console.log('视频播放结束')
     })
   }
 
   let navigate = useNavigate();
-  const answerCourse = () => {
-    navigate("/doExercises", {
-      replace: false,
-      state: { id, title }
-    })
-  }
-
   const courseList = props.courseList;
   const switchCourse = async (type) => {
     const index = courseList.findIndex(item => item.vod === currentVod);
+    let newId = "";
     let newVod = "";
     let newTitle = "";
     if(type === 'next') {
@@ -38,11 +32,11 @@ const courseDetail = (props) => {
         })
         return;
       }else {
-        const {isPass} = courseList[index + 1];
-        if(isPass === 1) {
-          newVod = courseList[index + 1].vod;
-          newTitle = courseList[index + 1].title;
-        }else {
+        const {id, vod, title, isPass} = courseList[index + 1];
+        newId = id;
+        newVod = vod;
+        newTitle = title;
+        if(isPass === 0) {
           Modal.show({
             content: <AutoCenter>需要通过本节课测试才能进入下一课，你做好准备了吗？</AutoCenter>,
             closeOnAction: true,
@@ -52,7 +46,17 @@ const courseDetail = (props) => {
                 text: '做好准备了',
                 primary: true,
                 onClick: () => {
-                  answerCourse();
+                  navigate("/doExercises", {
+                    replace: false,
+                    state: {
+                      id: currentId,
+                      title: currentTitle,
+                      vod: currentVod,
+                      nextId: newId,
+                      nextTitle: newTitle,
+                      nextVod: newVod,
+                    }
+                  })
                 }
               },
               {
@@ -71,9 +75,11 @@ const courseDetail = (props) => {
         })
         return;
       }
+      newId = courseList[index - 1].id;
       newVod = courseList[index - 1].vod;
       newTitle = courseList[index - 1].title;
     }
+    setCurrentId(newId)
     setCurrentTitle(newTitle);
     setCurrentVod(newVod);
   }

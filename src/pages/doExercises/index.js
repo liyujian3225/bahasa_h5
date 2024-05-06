@@ -6,11 +6,12 @@ import  "./index.less"
 
 const doExercises = (props) => {
   const stateParams = useLocation();
-  const { id, title } = stateParams.state;
+  const { id, title, nextId, nextTitle, nextVod } = stateParams.state;
   const [exercises, setExercises] = useState([]);
   const [loading, setLoading] = useState(false);
   const [initialValues, setInitialValues] = useState({});
 
+  let navigate = useNavigate();
   const [form] = Form.useForm();
   const submitExercises = () => {
     setLoading(true)
@@ -35,7 +36,10 @@ const doExercises = (props) => {
                 text: '观看',
                 primary: true,
                 onClick: () => {
-
+                  navigate("/courseDetail", {
+                    replace: false,
+                    state: { id: nextId, title: nextTitle, vod: nextVod }
+                  })
                 }
               },
             ] : [
