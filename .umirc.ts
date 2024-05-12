@@ -1,7 +1,7 @@
 import { defineConfig } from "umi";
 
 // 是否是生产环境
-const isProductionEnvironment = false;
+const isProductionEnvironment = true;
 const baseUrl = isProductionEnvironment ? "http://www.bahasaindo.net" : "http://bahasaindo.com";
 
 //配置文件，包含 Umi 所有非运行时配置

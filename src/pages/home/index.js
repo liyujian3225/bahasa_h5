@@ -44,8 +44,9 @@ export default () => {
         className="logoCard"
         src='./image/login_home.png'
       />
+      <Image src='./image/WechatIMG4809.jpg'/>
       <Image
-        style={{marginBottom: 16}}
+        style={{marginBottom: 16, marginTop: 16}}
         src='./image/loginBtn.png'
         onClick={() => navigate("/login", { replace: false })}
       />
@@ -55,7 +56,7 @@ export default () => {
         onClick={() => window.open("https://taioassets.oss-cn-beijing.aliyuncs.com/Pdfs/%E4%B8%9C%E4%B8%9C%E5%8D%B0%E5%B0%BC%E8%AF%AD%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%8D%8F%E8%AE%AE.pdf", "_blank")}
       />
       <Divider>下载东东印尼语App</Divider>
-      <Space className="downLoadBtn" style={{ '--gap': '8px' }} justify="between" block={true}>
+      <Space className="downLoadBtn" style={{ '--gap': '8px' }} justify="center" block={true}>
         <Image
           className="androidDownload"
           src='./image/Android.png'

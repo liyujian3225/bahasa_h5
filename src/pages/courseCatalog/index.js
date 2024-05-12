@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, connect } from 'umi';
-import { Image, Modal, AutoCenter, Empty } from 'antd-mobile'
+import { Image, Modal, AutoCenter, Empty, Skeleton } from 'antd-mobile'
 import { request } from '@/services';
 import './index.less';
 
@@ -18,18 +18,22 @@ const coverArtList = [
   {
     title: "东东发音课 Pgucapan",
     iconArt: './image_/img_voice.png',
-    coverArt: <Image src='./image/voiceCourse.jpg' fit='fill' />
+    coverArt: <Image src='./image/voiceCourse.png' fit='fill' />
   }
 ]
 
 const courseCatalog = (props) => {
 
   //获取课程
-  const [chapters, setChapters] = useState([])
+  const [chapters, setChapters] = useState([]);
+  const [isPass_, setIsPass_] = useState(0);
+  const [loading, setLoading] = useState(false)
   const queryChapters = () => {
+    setLoading(true)
     request.get('/business/web/course/find/TYAIILon')
       .then(res => {
         const { success, content } = res;
+        setLoading(false)
         if(success) {
           let { chapters } = content;
           chapters = chapters.map((item, index) => {
@@ -41,7 +45,8 @@ const courseCatalog = (props) => {
               coverArt: coverArtList[index]['coverArt'],
             }
           })
-          setChapters(chapters)
+          setIsPass_(chapters[0].isPass);
+          setChapters(chapters);
         }
       })
   }
@@ -51,10 +56,11 @@ const courseCatalog = (props) => {
 
   //查看章节
   const navigate = useNavigate();
-  const dumpDetail = ({id, name, isPass, title, iconArt}, index) => {
+  const dumpDetail = (item, index) => {
+    const {id, name, isPass, title, iconArt} = item;
     if(index === 1) {
       //进阶课要提示是否解锁
-      if(isPass === 0) {
+      if(isPass_ === 0) {
         Modal.show({
           content: <AutoCenter>请先完成基础课的学习。</AutoCenter>,
           closeOnAction: true,
@@ -97,15 +103,28 @@ const courseCatalog = (props) => {
           <Image src='./image_/img_intro.png' />
         </div>
       </div>
-      {chapters.length ? (
-        <ul className="courseCatalogCard">
-          {
-            chapters.map((item, index) => {
-              return <li key={item.id} onClick={() => dumpDetail(item ,index)}>{item.coverArt}</li>
-            })
-          }
-        </ul>
-      ) : <Empty description='暂无数据' style={{ marginTop: '50%' }} />}
+      {
+        loading ? (
+          <>
+            <Skeleton.Title animated />
+            <Skeleton.Paragraph lineCount={5} animated />
+            <Skeleton.Title animated />
+            <Skeleton.Paragraph lineCount={5} animated />
+            <Skeleton.Title animated />
+            <Skeleton.Paragraph lineCount={5} animated />
+          </>
+        ) : (
+          chapters.length ? (
+            <ul className="courseCatalogCard">
+              {
+                chapters.map((item, index) => {
+                  return <li key={item.id} onClick={() => dumpDetail(item ,index)}>{item.coverArt}</li>
+                })
+              }
+            </ul>
+          ) : <Empty description='暂无数据' style={{ marginTop: '50%' }} />
+        )
+      }
     </div>
   )
 }

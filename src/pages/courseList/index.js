@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useLocation, connect } from 'umi';
-import { Space, Modal, Radio, AutoCenter, List, Image, Empty } from 'antd-mobile'
+import { Space, Modal, Radio, AutoCenter, List, Image, Empty, Skeleton } from 'antd-mobile'
 import { LockFill } from 'antd-mobile-icons'
 import { request } from "@/services";
 import './index.less';
@@ -9,12 +9,13 @@ const courseList = (props) => {
   const stateParams = useLocation();
   const { id, name, iconArt } = stateParams.state;
   const [courseListData, setCourseListData] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   //观看课程
   const navigate = useNavigate();
   const dumpDetail = ({ id, title, vod, isPass }, index) => {
     //判断课程有无观看权限
-    if(isPass === 0 && index > 0) {
+    if(index > 0 && isPass === 0) {
       Modal.show({
         content: <AutoCenter>您没有观看本课的权限，请先通过上节课的题目测试。</AutoCenter>,
         closeOnAction: true,
@@ -79,9 +80,11 @@ const courseList = (props) => {
   }
 
   const queryCourse = () => {
+    setLoading(true)
     request.get('/business/web/course/find/TYAIILon')
       .then(res => {
         const { success, content } = res;
+        setLoading(false)
         if(success) {
           let { sections } = content;
           let courseList = sections.filter(j => j.chapterId === id )
@@ -106,27 +109,45 @@ const courseList = (props) => {
         </div>
       </div>
       <div className="chapterContain">
-        {courseListData.length ? (
-          <List>
-            {
-              courseListData.map((item, index) => {
-                const {id, title, vod, isPass, questionNum} = item;
-                return (
-                  <List.Item
-                    key={vod}
-                    onClick={() => dumpDetail({id, title, vod, isPass}, index)}
-                  >
-                    <div className="courseItem">
-                      <span>{index + 1}</span>
-                      <span>{title.split('】')[1]}</span>
-                      {(isPass === 0 && index > 0) ? <LockFill fontSize={20}/> : <></>}
-                    </div>
-                  </List.Item>
-                )
-              })
-            }
-          </List>
-        ) : <Empty description='暂无数据' style={{ marginTop: '50%' }} />}
+        {
+          loading ? (
+            <>
+              <Skeleton.Title animated />
+              <Skeleton.Paragraph lineCount={5} animated />
+              <Skeleton.Title animated />
+              <Skeleton.Paragraph lineCount={5} animated />
+              <Skeleton.Title animated />
+              <Skeleton.Paragraph lineCount={5} animated />
+            </>
+          ) : (
+            courseListData.length ? (
+              <List>
+                {
+                  courseListData.map((item, index) => {
+                    const {id, title, vod, isPass, questionNum} = item;
+
+                    //判断上一节答题有没有通过
+                    let isPass_ = 0;
+                    if(index > 0) isPass_ = courseListData[index - 1].isPass;
+
+                    return (
+                      <List.Item
+                        key={vod}
+                        onClick={() => dumpDetail({id, title, vod, isPass: isPass_}, index)}
+                      >
+                        <div className="courseItem">
+                          <span>{index + 1}</span>
+                          <span>{title.split('】')[1]}</span>
+                          {(index > 0 && isPass_ === 0) ? <LockFill fontSize={20}/> : <></>}
+                        </div>
+                      </List.Item>
+                    )
+                  })
+                }
+              </List>
+            ) : <Empty description='暂无数据' style={{ marginTop: '50%' }} />
+          )
+        }
       </div>
     </div>
   )

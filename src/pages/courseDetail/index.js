@@ -32,7 +32,8 @@ const courseDetail = (props) => {
         })
         return;
       }else {
-        const {id, vod, title, isPass} = courseList[index + 1];
+        const {id, vod, title} = courseList[index + 1];
+        const isPass = courseList[index].isPass;
         newId = id;
         newVod = vod;
         newTitle = title;
