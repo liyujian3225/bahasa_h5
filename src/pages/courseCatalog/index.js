@@ -7,17 +7,17 @@ import './index.less';
 const coverArtList = [
   {
     title: "东东基础课 Dasar",
-    iconArt: './image_/img_base.png',
+    iconArt: './image/img_base.png',
     coverArt: <Image src='./image/baseCourse.png' fit='fill' />
   },
   {
     title: "东东进阶课 Lanjutan",
-    iconArt: './image_/img_advanced.png',
+    iconArt: './image/img_advanced.png',
     coverArt: <Image src='./image/advancedCourse.png' fit='fill' />
   },
   {
     title: "东东发音课 Pgucapan",
-    iconArt: './image_/img_voice.png',
+    iconArt: './image/img_voice.png',
     coverArt: <Image src='./image/voiceCourse.png' fit='fill' />
   }
 ]
@@ -100,7 +100,7 @@ const courseCatalog = (props) => {
           </li>
         </ul>
         <div className="chapterAttentionImg">
-          <Image src='./image_/img_intro.png' />
+          <Image src='./image/img_intro.png' />
         </div>
       </div>
       {

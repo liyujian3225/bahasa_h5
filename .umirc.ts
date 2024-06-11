@@ -31,7 +31,7 @@ export default defineConfig({
   },
   routes: [
     { path: "/", component: "home" },
-    { path: "/home", component: "home", name: "Selamat datang 欢迎" },
+    { path: "/home", component: "home" },
     { path: "/login", component: "login", name: "Selamat datang 欢迎" },
     { path: "/courseCatalog", component: "courseCatalog", name: "课程分类" },
     { path: "/courseList", component: "courseList", name: "课程目录" },
@@ -39,6 +39,7 @@ export default defineConfig({
     { path: "/courseDetail", component: "courseDetail", name: "课程查看" },
     { path: "/setting", component: "setting", name: "设置" },
     { path: "/doExercises", component: "doExercises", name: "习题练习" },
+    { path: "/aboutMe", component: "AboutMe" },
   ],
   alias: {},
   links: [

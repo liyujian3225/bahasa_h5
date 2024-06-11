@@ -149,7 +149,7 @@ const Login = (props) => {
               size='mini'>
               <div className="loginBtnCon">
                 <div className="loginBtnConLeft">
-                  <Image className="loginIcon" src='./image_/icon_LogIn.png' />
+                  <Image className="loginIcon" src='./image/icon_LogIn.png' />
                   <span>登录系统</span>
                 </div>
                 <div className="loginBtnConRight">

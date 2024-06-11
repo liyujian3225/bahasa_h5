@@ -1,12 +1,13 @@
 import React from 'react'
-import { NavBar, Image } from 'antd-mobile'
-import { useNavigate, useRouteProps, Outlet } from 'umi';
+import { NavBar, Image, WaterMark } from 'antd-mobile'
+import { useNavigate, useRouteProps, Outlet, connect } from 'umi';
 import { SetOutline } from 'antd-mobile-icons'
 import "./index.less"
 
 const Layout = (props) => {
   const routeProps = useRouteProps()
   const { name } = routeProps;
+  console.log(name)
 
   const right = (
     <div style={{ fontSize: 24 }} onClick={() => navigate("/setting", { replace: true })}>
@@ -32,11 +33,24 @@ const Layout = (props) => {
         <></>
       }
       <div className="outletContent">
-        <Image className="bgImage" src='./image_/img_background.png'/>
+        <Image className="bgImage" src='./image/img_background.png'/>
         <Outlet />
+        { (name && name !== "Selamat datang 欢迎") ?
+          <WaterMark
+            content={props.waterMarkContent}
+            gapX={12}
+            gapY={24}
+            fullPage={false}
+          /> :
+          <></>
+        }
       </div>
     </div>
   );
 }
 
-export default Layout
+export default connect((state) => {
+  return {
+    waterMarkContent: state.user.waterMarkContent,
+  }
+})(Layout)

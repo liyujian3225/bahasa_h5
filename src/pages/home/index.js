@@ -16,9 +16,9 @@ export default () => {
   const downLoadApp = (type) => {
     let url = "";
     if(type === "android") {
-      url = 'https://taioassets.oss-cn-beijing.aliyuncs.com/Apks/%E4%B8%9C%E4%B8%9C%E5%8D%B0%E5%B0%BC%E8%AF%AD-%E8%A7%86%E9%A2%91%E8%AF%BE%E7%A8%8B.apk'
+      url = 'https://taioassets.oss-cn-beijing.aliyuncs.com/Apks/app6.0.1.apk'
     }else {
-      url = 'https://apps.apple.com/cn/app/%E4%B8%9C%E4%B8%9C%E5%8D%B0%E5%B0%BC%E8%AF%AD/id6476457350'
+      url = 'https://apps.apple.com/cn/app/bahasadong/id6502833636'
     }
     var user = navigator.userAgent;
     var isAndroid = user.indexOf("Android") > -1 || user.indexOf("Adr") > -1;
@@ -70,7 +70,7 @@ export default () => {
         className="bahasaindoLink"
         onClick={() => window.open("http://bahasaindo.cn", "_blank")}>
         <div className="icon">
-          <Image src="./image_/icon_card.png" alt=""/>
+          <Image src="./image/icon_card.png" alt=""/>
         </div>
         <span>单词卡</span>
       </div>

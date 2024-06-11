@@ -147,7 +147,7 @@ const courseDetail = (props) => {
           </li>
         </ul>
         <div className="chapterAttentionImg">
-          <Image src='./image_/img_intro.png'/>
+          <Image src='./image/img_intro.png'/>
         </div>
       </div>
       <p className="textArea">
