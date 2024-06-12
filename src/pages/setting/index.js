@@ -33,7 +33,7 @@ export default () => {
           修改密码
         </List.Item>
         <List.Item onClick={() => {
-          navigate("/aboutMe", { replace: true })
+          navigate("/aboutUs", { replace: true })
         }}>
           关于我们
         </List.Item>
